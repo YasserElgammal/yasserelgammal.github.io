@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasser Elgammal | Backend Developer</title>
+    <meta name="description"
+        content="I'm Yasser Elgammal, a Backend Developer specializing in PHP and Laravel. I build scalable, high-quality backends, create APIs, and share what I learn with other developers.">
+    <meta name="keywords"
+        content="Yasser Elgammal, Backend Developer, Laravel, PHP, Livewire, Tailwind CSS, APIs, Scalable Backend, Software Development, Tech Speaker, Think Like a Senior, LinkedIn, Programming, E-learning, E-commerce, Fintech, ERP, Booking Platforms">
+    <meta name="author" content="Yasser Elgammal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-10 backdrop-blur-md border-b border-white border-opacity-20">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-white text-xl font-bold">YE</a>
+                <div class="flex gap-8">
+                    <a href="index.html" class="nav-link text-white font-medium">Home</a>
+                    <a href="projects.html" class="nav-link text-white font-medium">Projects</a>
+                    <a href="contact.html" class="nav-link text-white font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-4xl w-full text-center">
+            <!-- Profile Image -->
+            <div class="fade-in mb-8">
+                <div class="w-48 h-48 mx-auto rounded-full overflow-hidden profile-img bg-white bg-opacity-20">
+                    <div class="w-full h-full flex items-center justify-center text-white text-6xl font-bold">
+                        <img src="assets/images/profile_pic_yasser_elgammal.jpeg" alt="Yasser Elgammal"
+                            class="w-full h-full object-cover filter brightness-125">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name & Title -->
+            <h1 class="fade-in delay-1 text-5xl md:text-6xl font-bold text-white mb-4">
+                Yasser Elgammal
+            </h1>
+            <p class="fade-in delay-2 text-2xl md:text-3xl text-blue-100 mb-8">
+                Backend Developer | PHP | Laravel
+            </p>
+
+            <!-- Bio -->
+            <div class="fade-in delay-3 max-w-2xl mx-auto mb-12">
+                <p class="text-lg text-white text-opacity-90 leading-relaxed mb-4">
+                    I'm a Backend Developer who enjoys turning complex ideas into simple, practical systems. I focus on
+                    building scalable, high-quality backends using Laravel, PHP, and modern tools such as Livewire and
+                    Tailwind CSS.
+                </p>
+                <p class="text-lg text-white text-opacity-90 leading-relaxed mb-4">
+                    What truly drives me is solving real-world problems, things that make life easier for users and
+                    businesses. Throughout my journey, I’ve worked on systems across Fintech, E-commerce, ERP,
+                    E-learning, and Booking platforms, each one teaching me something new about architecture, logic, and
+                    how people actually use technology.
+                </p>
+                <p class="text-lg text-white text-opacity-90 leading-relaxed mb-4">
+                    I'm always motivated to learn, grow, and take on new challenges, delivering solutions that not only
+                    work but truly make a difference.
+                </p>
+                <p class="text-lg text-white font-bold text-opacity-90 leading-relaxed mb-2">
+                    Yasser Elgammal
+                </p>
+                <p class="text-lg text-white text-opacity-90 leading-relaxed">
+                    “Eager to Learn, Hungry to Build 💪”
+                </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="fade-in delay-3 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="projects.html"
+                    class="btn-primary px-8 py-4 rounded-lg text-white font-semibold text-lg inline-block">
+                    View My Projects
+                </a>
+                <a href="contact.html"
+                    class="btn-secondary px-8 py-4 rounded-lg text-white font-semibold text-lg inline-block">
+                    Get In Touch
+                </a>
+            </div>
+
+            <div class="text-center text-white text-opacity-90 leading-relaxed mt-4 fade-in delay-4 mb-2">
+                <p class="text-sm">© <span id="year"></span> Yasser Elgammal.</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById('year').textContent = new Date().getFullYear();
+        };
+    </script>
+    <script src="https://t.contentsquare.net/uxa/3944420da3fb1.js"></script>
+    <!-- end of scripts -->
+</body>
+
+</html>
