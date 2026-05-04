@@ -88,58 +88,65 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-primary:hover {
+    background-color: #1d4ed8;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #f97316, #ea580c);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f97316;
+    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-secondary:hover {
+    background-color: #ea580c;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
 }
 
 /* Projects Page Specific */
 .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     border-left: 4px solid #3b82f6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.10);
     border-left-color: #f97316;
 }
 
 .badge {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background-color: #2563eb;
 }
 
 .github-btn {
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .github-btn:hover {
-    background: #f97316;
-    transform: scale(1.05);
+    background-color: #f97316;
+    box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
 }
 
 /* Contact Page Specific */
 .social-card {
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .social-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.10);
 }
 
 .social-card.github:hover {
@@ -159,14 +166,15 @@
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    transition: all 0.3s ease;
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #f97316, #ea580c);
+    background-color: #f97316;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
 }
 
 input:focus,
