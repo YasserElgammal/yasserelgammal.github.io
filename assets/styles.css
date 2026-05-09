@@ -79,7 +79,14 @@
 
 /* Home Page Specific */
 .gradient-bg {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #f97316 100%);
+    /* Move blue up for mobile so buttons have better contrast */
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 15%, #f97316 80%);
+}
+
+@media (min-width: 768px) {
+    .gradient-bg {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #f97316 100%);
+    }
 }
 
 .profile-img {
