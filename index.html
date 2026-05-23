@@ -20,6 +20,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <!-- Styles -->
+  <script>
+    (function () {
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem('theme');
+      } catch (error) {}
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -28,13 +38,23 @@
   <!-- Navigation -->
   <nav
     class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-10 backdrop-blur-md border-b border-white border-opacity-20">
-    <div class="max-w-6xl mx-auto px-6 py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
       <div class="flex justify-between items-center">
         <a href="index.html" class="text-white text-xl font-bold">YE</a>
-        <div class="flex gap-4 sm:gap-8 text-sm sm:text-base">
+        <div class="flex items-center gap-3 sm:gap-8 text-sm sm:text-base">
           <a href="index.html" class="nav-link text-white font-medium">Home</a>
           <a href="projects.html" class="nav-link text-white font-medium">Projects</a>
           <a href="contact.html" class="nav-link text-white font-medium">Contact</a>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color mode">
+            <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36l-1.42 1.42M7.05 16.95l-1.41 1.41m12.72 0l-1.42-1.41M7.05 7.05L5.64 5.64M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+            <svg class="theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.35 14.95A8.5 8.5 0 119.05 3.65 6.5 6.5 0 0020.35 14.95z" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -141,6 +161,7 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     }
   </script>
+  <script src="assets/js/theme.js"></script>
   <script src="https://t.contentsquare.net/uxa/3944420da3fb1.js"></script>
 </body>
 
