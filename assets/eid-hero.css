@@ -1,0 +1,658 @@
+/* Temporary Eid Al-Adha hero accents */
+.hero-section {
+    isolation: isolate;
+    padding-top: max(9rem, calc(env(safe-area-inset-top) + 8rem));
+}
+
+.hero-copy {
+    padding-top: 2.25rem;
+}
+
+.hero-visual {
+    position: relative;
+}
+
+.eid-season[hidden] {
+    display: none !important;
+}
+
+.eid-decorations {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    animation: eidSoftReveal 0.9s ease-out both;
+}
+
+.eid-decorations::before {
+    content: '';
+    position: absolute;
+    inset: 12% -12% 0;
+    background-image:
+        radial-gradient(circle, rgba(251, 191, 36, 0.18) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px);
+    background-size: 6.25rem 6.25rem, 9rem 9rem;
+    background-position: 0 0, 3rem 2rem;
+    opacity: 0.5;
+    animation: eidParticlesDrift 18s linear infinite;
+}
+
+.eid-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(8px);
+    opacity: 0.42;
+    animation: eidGlowPulse 7s ease-in-out infinite;
+}
+
+.eid-glow-one {
+    top: 16%;
+    left: 5%;
+    width: 10rem;
+    height: 10rem;
+    background: radial-gradient(circle, rgba(250, 204, 21, 0.34), transparent 68%);
+}
+
+.eid-glow-two {
+    right: 9%;
+    bottom: 14%;
+    width: 13rem;
+    height: 13rem;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%);
+    animation-delay: -2.5s;
+}
+
+.eid-star {
+    --star-drift-x: 0.4rem;
+    --star-drift-y: -0.35rem;
+    position: absolute;
+    width: 0.44rem;
+    height: 0.44rem;
+    background: #fde68a;
+    border-radius: 999px;
+    box-shadow: 0 0 14px rgba(253, 230, 138, 0.85);
+    animation:
+        eidTwinkle 2.6s ease-in-out infinite,
+        eidStarDrift 7s ease-in-out infinite;
+}
+
+.eid-star::before,
+.eid-star::after {
+    content: '';
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 1.25rem;
+    height: 1px;
+    background: rgba(253, 230, 138, 0.65);
+    transform: translate(-50%, -50%);
+}
+
+.eid-star::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.eid-star-one {
+    top: 27%;
+    right: 23%;
+}
+
+.eid-star-two {
+    --star-drift-x: -0.5rem;
+    --star-drift-y: 0.3rem;
+    top: 19%;
+    left: 13%;
+    animation-delay: -0.8s;
+}
+
+.eid-star-three {
+    --star-drift-x: 0.35rem;
+    --star-drift-y: 0.45rem;
+    bottom: 26%;
+    left: 42%;
+    animation-delay: -1.6s;
+}
+
+.eid-star-four {
+    --star-drift-x: -0.35rem;
+    --star-drift-y: -0.5rem;
+    top: 47%;
+    right: 5%;
+    animation-delay: -2.1s;
+}
+
+.eid-particle {
+    position: absolute;
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 999px;
+    background: rgba(253, 230, 138, 0.9);
+    box-shadow: 0 0 14px rgba(253, 230, 138, 0.85);
+    animation: eidParticleRise 8s ease-in-out infinite;
+}
+
+.eid-particle-one {
+    left: 18%;
+    bottom: 18%;
+}
+
+.eid-particle-two {
+    left: 55%;
+    bottom: 12%;
+    animation-delay: -2.8s;
+}
+
+.eid-particle-three {
+    right: 17%;
+    bottom: 35%;
+    animation-delay: -5s;
+}
+
+.eid-firework {
+    position: absolute;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 999px;
+    opacity: 0.4;
+    background:
+        radial-gradient(circle, rgba(253, 230, 138, 0.7) 0 2px, transparent 3px),
+        conic-gradient(from 0deg, transparent 0 10deg, rgba(253, 230, 138, 0.5) 10deg 14deg, transparent 14deg 60deg, rgba(147, 197, 253, 0.34) 60deg 64deg, transparent 64deg 120deg, rgba(253, 230, 138, 0.45) 120deg 124deg, transparent 124deg 190deg, rgba(147, 197, 253, 0.3) 190deg 194deg, transparent 194deg 260deg, rgba(253, 230, 138, 0.45) 260deg 264deg, transparent 264deg 360deg);
+    -webkit-mask-image: radial-gradient(circle, transparent 0 18%, #000 19% 50%, transparent 51%);
+    mask-image: radial-gradient(circle, transparent 0 18%, #000 19% 50%, transparent 51%);
+    animation: eidFirework 6.5s ease-out infinite;
+}
+
+.eid-firework-one {
+    top: 13%;
+    left: 35%;
+}
+
+.eid-firework-two {
+    right: 18%;
+    top: 55%;
+    width: 4rem;
+    height: 4rem;
+    animation-delay: -3.2s;
+}
+
+.eid-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.9rem;
+    padding: 0.42rem 0.78rem;
+    border: 1px solid rgba(253, 230, 138, 0.48);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.24);
+    color: #fde68a;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 24px rgba(251, 191, 36, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    animation:
+        eidSoftReveal 0.65s ease-out both,
+        eidBadgeGlow 4.5s ease-in-out infinite;
+}
+
+.eid-badge::before {
+    content: '\2728';
+}
+
+.eid-subtitle {
+    max-width: 34rem;
+    margin: -0.7rem auto 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.7;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.82), #fde68a, rgba(255, 255, 255, 0.9));
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation:
+        eidSubtitleSlide 0.75s ease-out 0.12s both,
+        eidSubtitleShimmer 4.8s ease-in-out 1s infinite;
+}
+
+@supports (-webkit-text-fill-color: transparent) {
+    .eid-subtitle {
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.eid-sheep {
+    --sheep-arc-start-x: -7.2rem;
+    --sheep-arc-mid-left-x: -3.6rem;
+    --sheep-arc-mid-right-x: 1.5rem;
+    --sheep-arc-end-x: 4.25rem;
+    --sheep-arc-low-y: 1.25rem;
+    --sheep-arc-high-y: -2.15rem;
+    position: absolute;
+    top: -1.35rem;
+    left: 50%;
+    z-index: 2;
+    width: 5.2rem;
+    height: 3.6rem;
+    margin-bottom: 0;
+    filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.22));
+    animation:
+        eidSoftReveal 0.7s ease-out 0.2s both,
+        eidSheepArc 7s ease-in-out infinite;
+}
+
+.eid-sheep-body {
+    position: absolute;
+    left: 0.55rem;
+    top: 1rem;
+    width: 3.25rem;
+    height: 1.85rem;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 18% 35%, #ffffff 0 0.45rem, transparent 0.48rem),
+        radial-gradient(circle at 40% 23%, #ffffff 0 0.55rem, transparent 0.58rem),
+        radial-gradient(circle at 64% 38%, #ffffff 0 0.5rem, transparent 0.53rem),
+        #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    animation: eidSheepBreathe 3.2s ease-in-out infinite;
+}
+
+.eid-sheep-head {
+    position: absolute;
+    right: 0.45rem;
+    top: 1.02rem;
+    width: 1.38rem;
+    height: 1.5rem;
+    border-radius: 48% 52% 46% 46%;
+    background: #1f2937;
+    transform-origin: 30% 70%;
+    animation: eidSheepNod 3.2s ease-in-out infinite;
+}
+
+.eid-sheep-head::after {
+    content: '';
+    position: absolute;
+    top: 0.42rem;
+    right: 0.28rem;
+    width: 0.18rem;
+    height: 0.18rem;
+    border-radius: 999px;
+    background: #fde68a;
+    animation: eidSheepBlink 4.2s ease-in-out infinite;
+}
+
+.eid-sheep-ear {
+    position: absolute;
+    right: 1.34rem;
+    top: 1rem;
+    width: 0.48rem;
+    height: 0.8rem;
+    border-radius: 999px;
+    background: #111827;
+    transform: rotate(-26deg);
+    transform-origin: 80% 20%;
+    animation: eidSheepEarWiggle 2.8s ease-in-out infinite;
+}
+
+.eid-sheep-leg {
+    position: absolute;
+    bottom: 0.2rem;
+    width: 0.28rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: #111827;
+    transform-origin: top center;
+    animation: eidSheepStep 2.6s ease-in-out infinite;
+}
+
+.eid-sheep-leg-one {
+    left: 1.55rem;
+}
+
+.eid-sheep-leg-two {
+    left: 3.05rem;
+    animation-delay: -1.3s;
+}
+
+:root[data-theme="dark"] .eid-sheep {
+    filter:
+        drop-shadow(0 0 0.35rem rgba(255, 255, 255, 0.42))
+        drop-shadow(0 0.75rem 1.2rem rgba(15, 23, 42, 0.44));
+}
+
+:root[data-theme="dark"] .eid-sheep-body {
+    background:
+        radial-gradient(circle at 18% 35%, #ffffff 0 0.45rem, transparent 0.48rem),
+        radial-gradient(circle at 40% 23%, #ffffff 0 0.55rem, transparent 0.58rem),
+        radial-gradient(circle at 64% 38%, #ffffff 0 0.5rem, transparent 0.53rem),
+        #ffffff;
+    border-color: rgba(253, 230, 138, 0.78);
+    box-shadow: inset 0 -0.16rem 0.38rem rgba(203, 213, 225, 0.62);
+}
+
+:root[data-theme="dark"] .eid-sheep-head,
+:root[data-theme="dark"] .eid-sheep-ear,
+:root[data-theme="dark"] .eid-sheep-leg {
+    background: #020617;
+    box-shadow: 0 0 0 1px rgba(253, 230, 138, 0.35);
+}
+
+@keyframes eidFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translate3d(0, -0.75rem, 0) rotate(-3deg);
+    }
+}
+
+@keyframes eidSoftReveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes eidGlowPulse {
+    0%, 100% {
+        opacity: 0.26;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.48;
+        transform: scale(1.04);
+    }
+}
+
+@keyframes eidTwinkle {
+    0%, 100% {
+        opacity: 0.28;
+        transform: scale(0.8) rotate(0deg);
+        box-shadow: 0 0 8px rgba(253, 230, 138, 0.45);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.22) rotate(18deg);
+        box-shadow: 0 0 18px rgba(253, 230, 138, 0.95), 0 0 34px rgba(251, 191, 36, 0.36);
+    }
+}
+
+@keyframes eidStarDrift {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: var(--star-drift-x) var(--star-drift-y);
+    }
+}
+
+@keyframes eidParticleRise {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0.8rem, 0) scale(0.6);
+    }
+
+    35%, 70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0.8rem, -4.5rem, 0) scale(1);
+    }
+}
+
+@keyframes eidSheepBlink {
+    0%, 92%, 100% {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0.15);
+    }
+}
+
+@keyframes eidSheepBreathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035, 0.98);
+    }
+}
+
+@keyframes eidSheepNod {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(4deg) translateY(0.08rem);
+    }
+}
+
+@keyframes eidSheepEarWiggle {
+    0%, 100% {
+        transform: rotate(-26deg);
+    }
+
+    45% {
+        transform: rotate(-38deg);
+    }
+
+    60% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes eidSheepStep {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(6deg) translateY(-0.08rem);
+    }
+}
+
+@keyframes eidFirework {
+    0%, 62%, 100% {
+        opacity: 0;
+        transform: scale(0.4) rotate(0deg);
+    }
+
+    72% {
+        opacity: 0.42;
+    }
+
+    88% {
+        opacity: 0;
+        transform: scale(1.05) rotate(20deg);
+    }
+}
+
+@keyframes eidBadgeGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(251, 191, 36, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes eidSheepArc {
+    0% {
+        transform: translate(var(--sheep-arc-start-x), var(--sheep-arc-low-y)) rotate(-10deg);
+    }
+
+    25% {
+        transform: translate(var(--sheep-arc-mid-left-x), -1.2rem) rotate(-4deg);
+    }
+
+    50% {
+        transform: translate(-50%, var(--sheep-arc-high-y)) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(var(--sheep-arc-mid-right-x), -1.2rem) rotate(4deg);
+    }
+
+    100% {
+        transform: translate(var(--sheep-arc-end-x), var(--sheep-arc-low-y)) rotate(10deg);
+    }
+}
+
+@keyframes eidSubtitleSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-0.85rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes eidSubtitleShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes eidParticlesDrift {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-4rem, -3rem, 0);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding-top: max(10rem, calc(env(safe-area-inset-top) + 8.75rem));
+    }
+
+    .hero-copy {
+        padding-top: 3rem;
+    }
+
+    .eid-sheep {
+        --sheep-arc-start-x: -5.6rem;
+        --sheep-arc-mid-left-x: -2.9rem;
+        --sheep-arc-mid-right-x: 0.85rem;
+        --sheep-arc-end-x: 3.2rem;
+        --sheep-arc-low-y: 0.9rem;
+        --sheep-arc-high-y: -1.65rem;
+        top: -0.9rem;
+        transform-origin: center;
+    }
+
+    .eid-firework-two,
+    .eid-star-four {
+        display: none;
+    }
+
+    .eid-subtitle {
+        margin-top: -0.25rem;
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eid-decorations::before,
+    .eid-glow,
+    .eid-star,
+    .eid-particle,
+    .eid-firework,
+    .eid-badge,
+    .eid-sheep,
+    .eid-sheep-body,
+    .eid-sheep-head,
+    .eid-sheep-ear,
+    .eid-sheep-leg,
+    .eid-sheep-head::after,
+    .eid-subtitle {
+        animation: none;
+    }
+}
+
+:root.eid-preview .eid-decorations {
+    animation: eidSoftReveal 0.9s ease-out both;
+}
+
+:root.eid-preview .eid-decorations::before {
+    animation: eidParticlesDrift 18s linear infinite;
+}
+
+:root.eid-preview .eid-glow {
+    animation: eidGlowPulse 7s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-star {
+    animation:
+        eidTwinkle 2.6s ease-in-out infinite,
+        eidStarDrift 7s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-particle {
+    animation: eidParticleRise 8s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-firework {
+    animation: eidFirework 6.5s ease-out infinite;
+}
+
+:root.eid-preview .eid-badge {
+    animation:
+        eidSoftReveal 0.65s ease-out both,
+        eidBadgeGlow 4.5s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-subtitle {
+    animation:
+        eidSubtitleSlide 0.75s ease-out 0.12s both,
+        eidSubtitleShimmer 4.8s ease-in-out 1s infinite;
+}
+
+:root.eid-preview .eid-sheep {
+    animation:
+        eidSoftReveal 0.7s ease-out 0.2s both,
+        eidSheepArc 7s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-sheep-body {
+    animation: eidSheepBreathe 3.2s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-sheep-head {
+    animation: eidSheepNod 3.2s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-sheep-head::after {
+    animation: eidSheepBlink 4.2s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-sheep-ear {
+    animation: eidSheepEarWiggle 2.8s ease-in-out infinite;
+}
+
+:root.eid-preview .eid-sheep-leg {
+    animation: eidSheepStep 2.6s ease-in-out infinite;
+}
