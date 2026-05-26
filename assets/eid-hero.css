@@ -549,7 +549,8 @@
     }
 
     .hero-copy {
-        padding-top: 3rem;
+        margin-top: 1rem;
+        padding-top: 0.75rem;
     }
 
     .eid-sheep {
@@ -593,66 +594,66 @@
     }
 }
 
-:root.eid-preview .eid-decorations {
+:root.eid-season-active .eid-decorations {
     animation: eidSoftReveal 0.9s ease-out both;
 }
 
-:root.eid-preview .eid-decorations::before {
+:root.eid-season-active .eid-decorations::before {
     animation: eidParticlesDrift 18s linear infinite;
 }
 
-:root.eid-preview .eid-glow {
+:root.eid-season-active .eid-glow {
     animation: eidGlowPulse 7s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-star {
+:root.eid-season-active .eid-star {
     animation:
         eidTwinkle 2.6s ease-in-out infinite,
         eidStarDrift 7s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-particle {
+:root.eid-season-active .eid-particle {
     animation: eidParticleRise 8s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-firework {
+:root.eid-season-active .eid-firework {
     animation: eidFirework 6.5s ease-out infinite;
 }
 
-:root.eid-preview .eid-badge {
+:root.eid-season-active .eid-badge {
     animation:
         eidSoftReveal 0.65s ease-out both,
         eidBadgeGlow 4.5s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-subtitle {
+:root.eid-season-active .eid-subtitle {
     animation:
         eidSubtitleSlide 0.75s ease-out 0.12s both,
         eidSubtitleShimmer 4.8s ease-in-out 1s infinite;
 }
 
-:root.eid-preview .eid-sheep {
+:root.eid-season-active .eid-sheep {
     animation:
         eidSoftReveal 0.7s ease-out 0.2s both,
         eidSheepArc 7s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-sheep-body {
+:root.eid-season-active .eid-sheep-body {
     animation: eidSheepBreathe 3.2s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-sheep-head {
+:root.eid-season-active .eid-sheep-head {
     animation: eidSheepNod 3.2s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-sheep-head::after {
+:root.eid-season-active .eid-sheep-head::after {
     animation: eidSheepBlink 4.2s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-sheep-ear {
+:root.eid-season-active .eid-sheep-ear {
     animation: eidSheepEarWiggle 2.8s ease-in-out infinite;
 }
 
-:root.eid-preview .eid-sheep-leg {
+:root.eid-season-active .eid-sheep-leg {
     animation: eidSheepStep 2.6s ease-in-out infinite;
 }
