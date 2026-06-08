@@ -29,4 +29,9 @@
     });
 
     applyTheme(root.dataset.theme || 'light', false);
+
+    const year = document.getElementById('year');
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 })();
