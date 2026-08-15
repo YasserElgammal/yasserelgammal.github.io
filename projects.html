@@ -33,19 +33,11 @@
       document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
     })();
   </script>
-  <link rel="stylesheet" href="assets/styles.min.css?v=20260718-2" />
-  <style>
-    .project-card.green-project {
-      border-left-color: #16a34a;
-    }
-
-    .project-card.green-project:hover {
-      border-left-color: var(--color-accent);
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css?v=20260816" />
 </head>
 
 <body class="bg-gray-50">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
       <div class="site-nav-inner flex justify-between items-center">
@@ -69,7 +61,7 @@
     </div>
   </nav>
 
-  <main class="pt-32 pb-20 px-6">
+  <main id="main-content" tabindex="-1" class="pt-32 pb-20 px-6">
     <div class="max-w-6xl mx-auto">
       <header class="text-center mb-16 fade-in">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Projects</h1>

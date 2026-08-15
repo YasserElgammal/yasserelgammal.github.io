@@ -41,7 +41,10 @@
             if (!target) return;
 
             event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+            if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
             window.history.replaceState(null, '', link.getAttribute('href'));
         });
     });

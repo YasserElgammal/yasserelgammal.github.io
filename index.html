@@ -36,22 +36,7 @@
       document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
     })();
   </script>
-  <link rel="stylesheet" href="assets/styles.min.css?v=20260718-2" />
-  <style>
-    @media (max-width: 640px) {
-      .home-hero .btn-secondary {
-        color: #c2410c;
-        background-color: #ffffff;
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
-      }
-
-      .home-hero .btn-secondary:hover,
-      .home-hero .btn-secondary:focus-visible {
-        color: #ffffff;
-        background-color: #c2410c;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css?v=20260816" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,6 +57,7 @@
 </head>
 
 <body class="gradient-bg min-h-screen font-inter">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav
     class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-10 backdrop-blur-md border-b border-white border-opacity-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
@@ -96,7 +82,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section id="home" class="home-hero max-w-6xl mx-auto px-6 pt-28 pb-20">
       <div class="hero-copy fade-in delay-1">
         <p class="hero-kicker">Hello, I'm</p>
