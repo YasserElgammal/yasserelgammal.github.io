@@ -34,6 +34,15 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/styles.min.css?v=20260718-2" />
+  <style>
+    .project-card.green-project {
+      border-left-color: #16a34a;
+    }
+
+    .project-card.green-project:hover {
+      border-left-color: var(--color-accent);
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50">
@@ -71,11 +80,11 @@
 
       <section class="mb-16" aria-labelledby="php-frameworks-heading">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 fade-in delay-1">
-          <span id="php-frameworks-heading" class="border-b-4 border-blue-600 pb-2">PHP Frameworks</span>
+          <span id="php-frameworks-heading" class="border-b-4 border-blue-600 pb-2">Green (PHP Framework)</span>
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2 md:col-span-2">
+          <article class="project-card green-project bg-white rounded-lg p-6 shadow-md fade-in delay-2 md:col-span-2">
             <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
                 <span class="inline-block text-xs font-semibold text-green-800 bg-green-100 px-3 py-1 rounded-full mb-4">Featured</span>
@@ -92,7 +101,7 @@
             <a href="https://github.com/YasserElgammal/green" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
           </article>
 
-          <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2">
+          <article class="project-card green-project bg-white rounded-lg p-6 shadow-md fade-in delay-2">
             <div class="flex items-start justify-between gap-3 mb-4">
               <h3 class="text-2xl font-bold text-gray-900">Green Core</h3>
               <span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">PHP</span>
@@ -105,10 +114,19 @@
             <a href="https://github.com/YasserElgammal/green-core" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
           </article>
 
-          <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-3">
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="packages-heading">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 fade-in delay-1">
+          <span id="packages-heading" class="border-b-4 border-blue-600 pb-2">Packages</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="project-card green-project bg-white rounded-lg p-6 shadow-md fade-in delay-2">
             <div class="flex items-start justify-between gap-3 mb-4">
               <h3 class="text-2xl font-bold text-gray-900">Green Locale</h3>
-              <span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">PHP</span>
+              <span class="badge text-white text-xs px-3 py-1 rounded-full bg-green-600">Green Package</span>
             </div>
             <p class="text-gray-600 mb-4 leading-relaxed">Localization support for Green Framework.</p>
             <div class="flex flex-wrap gap-2 mb-4">
@@ -117,15 +135,7 @@
             </div>
             <a href="https://github.com/YasserElgammal/green-locale" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
           </article>
-        </div>
-      </section>
 
-      <section class="mb-16" aria-labelledby="laravel-packages-heading">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 fade-in delay-1">
-          <span id="laravel-packages-heading" class="border-b-4 border-blue-600 pb-2">Laravel Packages</span>
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-8">
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">Laravel WASL eRental</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">WASL eRental API integration for Laravel.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">API Integration</span></div><a href="https://github.com/YasserElgammal/laravel-wasl-erental" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">Logisti Tawseel</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">Tawseel delivery API integration for Laravel.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">API Integration</span></div><a href="https://github.com/YasserElgammal/logisti-tawseel" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">Lara SMS</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">SMS integration for Laravel applications.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">SMS</span></div><a href="https://github.com/YasserElgammal/lara-sms" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
@@ -133,12 +143,26 @@
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-3"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">Laravel Gemini</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">Google Gemini integration for Laravel.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">AI</span></div><a href="https://github.com/YasserElgammal/laravel-gemini" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-3"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">Laravel Egypt National ID Parser</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">Parse and validate Egyptian National ID numbers.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Validation</span></div><a href="https://github.com/YasserElgammal/laravel-egypt-national-id-parser" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-4"><div class="flex items-start justify-between gap-3 mb-4"><h3 class="text-2xl font-bold text-gray-900">PureText</h3><span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Laravel</span></div><p class="text-gray-600 mb-4 leading-relaxed">Text filtering and replacement with Arabic and Unicode support.</p><div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span><span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Text Filtering</span></div><a href="https://github.com/YasserElgammal/pure-text" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a></article>
+
+          <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-gray-900">Rate Limiter</h3>
+              <span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Go Library</span>
+            </div>
+            <p class="text-gray-600 mb-4 leading-relaxed">A production-ready, thread-safe rate limiter library for Go applications using the Token Bucket algorithm.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-cyan-100 text-cyan-800 px-2 py-1 rounded">Go</span>
+              <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Library</span>
+              <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Algorithm</span>
+            </div>
+            <a href="https://github.com/YasserElgammal/rate-limiter" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
+          </article>
         </div>
       </section>
 
       <section class="mb-16">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 fade-in delay-1">
-          <span class="border-b-4 border-blue-600 pb-2">Open Source</span>
+          <span class="border-b-4 border-blue-600 pb-2">Projects</span>
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
@@ -154,20 +178,6 @@
               <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Architecture</span>
             </div>
             <a href="https://github.com/YasserElgammal/library-go" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
-          </article>
-
-          <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2">
-            <div class="flex items-start justify-between mb-4">
-              <h3 class="text-2xl font-bold text-gray-900">Rate Limiter</h3>
-              <span class="badge text-white text-xs px-3 py-1 rounded-full bg-blue-600">Go</span>
-            </div>
-            <p class="text-gray-600 mb-4 leading-relaxed">A production-ready, thread-safe rate limiter library for Go applications using the Token Bucket algorithm.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-xs bg-cyan-100 text-cyan-800 px-2 py-1 rounded">Go</span>
-              <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Library</span>
-              <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Algorithm</span>
-            </div>
-            <a href="https://github.com/YasserElgammal/rate-limiter" target="_blank" rel="noopener noreferrer" class="github-btn inline-block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium">View on GitHub -&gt;</a>
           </article>
 
           <article class="project-card bg-white rounded-lg p-6 shadow-md fade-in delay-2">

@@ -697,6 +697,20 @@ nav.bg-white .theme-toggle:hover {
     box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
 }
 
+@media (max-width: 640px) {
+    .home-hero .btn-secondary {
+        color: #c2410c;
+        background-color: #ffffff;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+    }
+
+    .home-hero .btn-secondary:hover,
+    .home-hero .btn-secondary:focus-visible {
+        color: #ffffff;
+        background-color: #c2410c;
+    }
+}
+
 /* Projects Page Specific */
 .project-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -707,6 +721,14 @@ nav.bg-white .theme-toggle:hover {
 .project-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-surface-hover);
+    border-left-color: var(--color-accent);
+}
+
+.project-card.green-project {
+    border-left-color: #16a34a;
+}
+
+.project-card.green-project:hover {
     border-left-color: var(--color-accent);
 }
 
