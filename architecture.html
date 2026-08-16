@@ -33,6 +33,7 @@
       .architecture-document h1 { font-size: 2rem; }
       .architecture-document h2 { font-size: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
       .architecture-document h3 { font-size: 1.25rem; }
+      .architecture-document :is(h1, h2, h3, h4, h5, h6) { scroll-margin-top: 6.5rem; }
       .architecture-document ul,
       .architecture-document ol { padding-left: 1.5rem; }
       .architecture-document ul { list-style: disc; }
@@ -204,6 +205,22 @@
         }
       }
 
+      function addHeadingAnchors() {
+        const slugCounts = new Map()
+
+        content.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+          const baseSlug = heading.textContent
+            .trim()
+            .toLowerCase()
+            .replace(/[^\p{L}\p{N}\s-]/gu, '')
+            .replace(/\s+/g, '-')
+          const count = slugCounts.get(baseSlug) || 0
+
+          heading.id = count ? `${baseSlug}-${count}` : baseSlug
+          slugCounts.set(baseSlug, count + 1)
+        })
+      }
+
       async function loadArchitecture() {
         try {
           const response = await fetch(ARCHITECTURE_URL)
@@ -213,6 +230,7 @@
 
           const markdown = normalizeMarkdown(await response.text())
           content.innerHTML = marked.parse(markdown)
+          addHeadingAnchors()
 
           content.querySelectorAll('a').forEach((link) => {
             const href = link.getAttribute('href')
@@ -271,6 +289,11 @@
             } catch (error) {
               diagram.textContent = 'This diagram could not be rendered.'
             }
+          }
+
+          if (window.location.hash) {
+            const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)))
+            if (target) target.scrollIntoView()
           }
         } catch (error) {
           content.innerHTML =
