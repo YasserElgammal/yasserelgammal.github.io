@@ -36,7 +36,7 @@
       document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
     })();
   </script>
-  <link rel="stylesheet" href="assets/styles.css?v=20260816" />
+  <link rel="stylesheet" href="assets/styles.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -87,7 +87,10 @@
       <div class="hero-copy fade-in delay-1">
         <p class="hero-kicker">Hello, I'm</p>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Yasser Elgammal</h1>
-        <p class="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-6">Backend Developer <span class="hero-separator">/</span> PHP <span class="hero-separator">/</span> Laravel <span class="hero-separator">/</span> Go</p>
+        <p class="hero-role text-xl sm:text-2xl md:text-3xl text-blue-100 mb-6">
+          <span class="sr-only">Software Engineer, Backend Engineer, PHP / Laravel Developer, and Go Developer</span>
+          <span class="hero-role-text" data-typing-role aria-hidden="true">Backend Engineer</span><span class="hero-role-cursor" aria-hidden="true"></span>
+        </p>
         <p class="hero-summary text-base sm:text-lg text-white text-opacity-90 leading-relaxed mb-8">I turn complex business ideas into scalable, practical backend systems that are built to last.</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="projects.html" class="btn-primary px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-white font-semibold text-base sm:text-lg inline-block text-center">View My Projects</a>
@@ -214,7 +217,8 @@
     <a class="back-to-hero" href="#home" aria-label="Back to the hero section"><span aria-hidden="true">&uarr;</span></a>
   </footer>
 
-  <script src="assets/js/theme.min.js?v=20260718-2" defer></script>
+  <script src="assets/js/theme.min.js" defer></script>
+  <script src="assets/js/typing.js" defer></script>
 </body>
 
 </html>
