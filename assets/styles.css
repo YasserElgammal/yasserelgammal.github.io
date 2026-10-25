@@ -2,7 +2,10 @@
 :root {
     color-scheme: light;
     --color-background: #f9fafb;
-    --color-home-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 15%, #f97316 80%);
+    --color-home-gradient:
+        radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.42), transparent 26rem),
+        radial-gradient(circle at 88% 18%, rgba(167, 139, 250, 0.5), transparent 28rem),
+        linear-gradient(135deg, #172554 0%, #1d4ed8 38%, #0e7490 68%, #6d28d9 100%);
     --color-surface: #ffffff;
     --color-surface-nav: #ffffff;
     --color-surface-muted: #f3f4f6;
@@ -13,8 +16,8 @@
     --color-primary: #2563eb;
     --color-primary-strong: #1d4ed8;
     --color-primary-soft: #dbeafe;
-    --color-accent: #c2410c;
-    --color-accent-strong: #9a3412;
+    --color-accent: #fb923c;
+    --color-accent-strong: #f97316;
     --shadow-surface: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     --shadow-surface-hover: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.10);
 }
@@ -202,7 +205,7 @@ button {
 .bg-opacity-20 { background-color: rgba(255,255,255,0.2); }
 .bg-center { background-position: center; }
 .bg-cover { background-size: cover; }
-.backdrop-blur-md { backdrop-filter: blur(12px); }
+.backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
 .shadow-md { box-shadow: var(--shadow-surface); }
 .shadow-\[0_10px_30px_rgba\(0\,0\,0\,0\.15\)\] { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 .shadow-\[0_10px_30px_rgba\(0\,0\,0\,0\.3\)\] { box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
@@ -488,7 +491,10 @@ nav.bg-white .theme-toggle:hover {
 
 @media (min-width: 768px) {
     .gradient-bg {
-        --color-home-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #f97316 100%);
+        --color-home-gradient:
+            radial-gradient(circle at 14% 10%, rgba(34, 211, 238, 0.46), transparent 34rem),
+            radial-gradient(circle at 86% 16%, rgba(167, 139, 250, 0.52), transparent 38rem),
+            linear-gradient(135deg, #172554 0%, #1d4ed8 36%, #0e7490 68%, #6d28d9 100%);
     }
 
     :root[data-theme="dark"] .gradient-bg {
@@ -734,7 +740,8 @@ nav.bg-white .theme-toggle:hover {
 
 .btn-primary {
     background-color: var(--color-primary-strong);
-    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -742,6 +749,18 @@ nav.bg-white .theme-toggle:hover {
     background-color: #1d4ed8;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+.gradient-bg .btn-primary {
+    background-color: rgba(15, 23, 42, 0.52);
+    border-color: rgba(148, 163, 184, 0.22);
+    box-shadow: var(--shadow-surface);
+}
+
+.gradient-bg .btn-primary:hover {
+    background-color: rgba(15, 23, 42, 0.72);
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: var(--shadow-surface-hover);
 }
 
 .btn-secondary {
