@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,217 +29,7 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/styles.css" />
-  <style>
-    /* CV Resume Profile Header */
-    .cv-profile-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 1.25rem;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-surface);
-      margin-top: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .cv-header-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2.5rem;
-      align-items: flex-start;
-    }
-
-    .cv-photo-frame {
-      width: 10.5rem;
-      height: 10.5rem;
-      border-radius: 1rem;
-      overflow: hidden;
-      border: 2px solid var(--color-border);
-      background: var(--color-surface-muted);
-      box-shadow: var(--shadow-surface);
-    }
-
-    .cv-quick-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      margin: 1.25rem 0;
-      padding: 0.85rem 1.25rem;
-      background: var(--color-surface-muted);
-      border-radius: 0.5rem;
-      border: 1px solid var(--color-border);
-    }
-
-    .cv-quick-info strong {
-      color: var(--color-text);
-    }
-
-    .cv-timeline-item {
-      position: relative;
-      padding-left: 2rem;
-      padding-bottom: 2.5rem;
-      border-left: 2px solid var(--color-border);
-    }
-
-    .cv-timeline-item:last-child {
-      border-left-color: transparent;
-      padding-bottom: 0;
-    }
-
-    .cv-timeline-dot {
-      position: absolute;
-      left: -0.42rem;
-      top: 0.25rem;
-      width: 0.8rem;
-      height: 0.8rem;
-      border-radius: 999px;
-      background: var(--color-accent);
-      box-shadow: 0 0 0 4px var(--color-accent-soft);
-    }
-
-    .cv-timeline-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .cv-timeline-head h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .cv-timeline-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-
-    .cv-timeline-company {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .cv-timeline-duties {
-      list-style: disc;
-      padding-left: 1.25rem;
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* Nested sub-timeline for roles within the same company */
-    .cv-subtimeline {
-      margin-top: 1.25rem;
-      padding-left: 1.25rem;
-      border-left: 2px dashed var(--color-border);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .cv-subrole {
-      position: relative;
-    }
-
-    .cv-subrole::before {
-      content: '';
-      position: absolute;
-      left: calc(-1.25rem - 5px);
-      top: 0.35rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--color-primary);
-      border: 2px solid var(--color-surface);
-    }
-
-    .cv-subrole-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .cv-subrole-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .cv-subrole-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-
-    .cv-subrole-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      background: var(--color-accent-soft);
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      margin-bottom: 0.5rem;
-    }
-
-    .tech-skills-matrix {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tech-skill-category {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-    }
-
-    .tech-skill-category h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .tech-pill-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .tech-pill-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 0.4rem;
-      background: var(--color-surface-muted);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-    }
-
-    @media (max-width: 860px) {
-      .cv-header-grid { grid-template-columns: 1fr; text-align: center; }
-      .cv-photo-frame { margin: 0 auto; }
-      .cv-quick-info { justify-content: center; text-align: left; }
-      .tech-skills-matrix { grid-template-columns: 1fr; }
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -468,6 +258,41 @@
         </div>
       </div>
 
+      <!-- 03 Technical Writing & Community -->
+      <div class="content-section">
+        <div class="section-heading-wrap">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Technical Writing &amp; Knowledge Sharing</h2>
+        </div>
+        <p class="section-lead">Articles, architecture deep dives, and engineering insights shared with the developer community:</p>
+
+        <div class="writing-card">
+          <div class="writing-card-content">
+            <div class="writing-card-badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1.2rem; height: 1.2rem; fill: currentColor;">
+                <path d="M7.42 10.05c-.18-.12-.46-.23-.84-.23H5.13v4.35h1.45c.38 0 .66-.11.84-.23.23-.15.35-.45.35-.95v-1.99c0-.5-.12-.8-.35-.95zm-3.89-2.2H7.2c.86 0 1.54.21 2.03.63.49.42.74 1.05.74 1.88v2.29c0 .83-.25 1.45-.74 1.88-.49.42-1.17.63-2.03.63H3.53V7.85zm9.57 0h3.87v1.74h-2.19v1.07h1.96v1.65h-1.96v1.16h2.24v1.74H13.1V7.85zm5.95 0h1.83l1.52 4.67 1.52-4.67h1.81l-2.42 7.36h-1.84l-2.42-7.36z"/>
+              </svg>
+              <span>DEV Community Author</span>
+            </div>
+            <h3>Sharing Real-World Backend Engineering Insights</h3>
+            <p>
+              Beyond building systems, I am deeply passionate about sharing knowledge and giving back to the developer community. I write in-depth technical articles exploring backend internals, clean architectural patterns, concurrency mechanisms, and practical engineering solutions in PHP, Laravel, and Go.
+            </p>
+            <div class="writing-topics">
+              <span class="writing-topic-pill">Backend Architecture</span>
+              <span class="writing-topic-pill">PHP &amp; Laravel</span>
+              <span class="writing-topic-pill">Go</span>
+              <span class="writing-topic-pill">Framework Internals</span>
+            </div>
+          </div>
+          <div class="writing-card-action">
+            <a href="https://dev.to/yasserelgammal" target="_blank" rel="noopener noreferrer" class="btn-primary" style="white-space: nowrap;">
+              Read Articles on DEV.to &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- CTA -->
       <div class="cta-card">
         <div>
@@ -514,3 +339,4 @@
 </body>
 
 </html>
+

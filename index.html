@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,113 +28,7 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/styles.css" />
-  <style>
-    /* ── Full-page scroll snap (index.html only) ─────────────────────── */
-    @media (min-width: 768px) {
-      html { overflow: hidden; }
-
-      #main-content {
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-snap-type: y proximity;
-        scroll-behavior: smooth;
-        scroll-padding-top: 4rem; /* clear fixed nav */
-      }
-
-      /* Every snap section */
-      #main-content > section {
-        scroll-snap-align: start;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      /* Hero: keep its own padding, just center */
-      #main-content > section.hero-container {
-        padding-top: 5rem;
-        padding-bottom: 3rem;
-      }
-
-      /* content-sections: balanced vertical padding */
-      #main-content > section.content-section {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      /* CTA + footer: auto-height snap stop, centered */
-      #main-content > section.snap-cta-footer {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      /* Footer inside snap doesn't need its own margin */
-      #main-content > section.snap-cta-footer .site-footer {
-        margin-top: 0;
-        width: 100%;
-      }
-    }
-
-    /* Smooth scroll for anchor links on all sizes */
-    html { scroll-behavior: smooth; }
-
-    /* Hero banner layout (photo first on mobile/sm, right on desktop) */
-    .hero-banner-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
-
-    .hero-banner-text {
-      flex: 1 1 32rem;
-      order: 2;
-    }
-
-    .hero-banner-avatar {
-      flex: 0 0 100%;
-      display: flex;
-      justify-content: center;
-      order: 1;
-    }
-
-    .hero-avatar-frame {
-      width: 13rem;
-      height: 13rem;
-      border-radius: 1.25rem;
-      overflow: hidden;
-      border: 2px solid var(--color-border);
-      box-shadow: var(--shadow-surface-hover);
-      background: var(--color-surface);
-    }
-
-    /* Only on large desktop screens (>= 1024px) do text and photo sit side-by-side */
-    @media (min-width: 1024px) {
-      .hero-banner-text {
-        order: 1;
-      }
-      .hero-banner-avatar {
-        flex: 0 0 auto;
-        display: block;
-        order: 2;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-banner-grid {
-        gap: 1.75rem;
-      }
-      .hero-avatar-frame {
-        width: 10.5rem;
-        height: 10.5rem;
-      }
-    }
-  </style>
+  
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -246,7 +140,7 @@
         <h2 id="frameworks-heading" class="section-title">Framework Architecture &amp; Core Engineering</h2>
       </div>
       <p class="section-lead">
-        To truly master backend architecture, I design and build frameworks from first principles—handling request lifecycles, dependency injection, and concurrency under the hood.
+        To truly master backend architecture, I design and build frameworks from first principlesâ€”handling request lifecycles, dependency injection, and concurrency under the hood.
       </p>
 
       <div class="framework-duo-grid">
@@ -450,3 +344,4 @@
 </body>
 
 </html>
+
