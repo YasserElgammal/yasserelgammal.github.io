@@ -30,10 +30,25 @@
 
     applyTheme(root.dataset.theme || 'light', false);
 
+    // Dynamic Copyright Year
+    const currentYear = new Date().getFullYear();
     const year = document.getElementById('year');
     if (year) {
-        year.textContent = new Date().getFullYear();
+        year.textContent = currentYear;
     }
+
+    // Dynamic Experience Calculation (from 2022)
+    const startYear = 2022;
+    const experienceYears = Math.max(1, currentYear - startYear);
+    const expText = experienceYears + '+';
+
+    document.querySelectorAll('[data-experience-years]').forEach((el) => {
+        el.textContent = expText;
+    });
+
+    document.querySelectorAll('[data-experience-text]').forEach((el) => {
+        el.textContent = expText + ' years';
+    });
 
     document.querySelectorAll('.section-jump, .back-to-hero').forEach((link) => {
         link.addEventListener('click', (event) => {

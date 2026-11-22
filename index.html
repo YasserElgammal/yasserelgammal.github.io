@@ -4,45 +4,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yasser Elgammal | Backend Developer</title>
+  <title>Yasser Elgammal | Backend Software Engineer (PHP &amp; Go)</title>
   <meta name="description"
-    content="I'm Yasser Elgammal, a Backend Developer specializing in PHP and Laravel. I build scalable, high-quality backends, create APIs, and share what I learn with other developers." />
+    content="Yasser Elgammal - Backend Software Engineer with 4+ years of experience building reliable backend systems, high-performance APIs, and open-source frameworks with PHP, Laravel, and Go." />
   <meta name="keywords"
-    content="Yasser Elgammal, Backend Developer, Laravel, PHP, Go, Livewire, Tailwind CSS, APIs, Scalable Backend, Software Development, Tech Speaker, E-commerce, Fintech, ERP, E-learning, Booking Platforms" />
+    content="Yasser Elgammal, Backend Developer, Software Engineer, PHP, Laravel, Go, Golang, Green Framework, Blue Go Framework, MySQL, PostgreSQL, APIs, Distributed Systems" />
   <meta name="author" content="Yasser Elgammal" />
   <link rel="canonical" href="https://yasserelgammal.github.io/" />
-  <meta property="og:title" content="Yasser Elgammal | Backend Developer" />
-  <meta property="og:description" content="I build scalable backend systems using Laravel, PHP, Go, and clean API architecture." />
+  <meta property="og:title" content="Yasser Elgammal | Backend Software Engineer (PHP &amp; Go)" />
+  <meta property="og:description" content="Backend Engineer building reliable systems with PHP, Laravel, and Go." />
   <meta property="og:image" content="https://yasserelgammal.github.io/assets/images/profile_pic_yasser_elgammal_512.jpg" />
   <meta property="og:url" content="https://yasserelgammal.github.io/" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Yasser Elgammal | Backend Developer" />
-  <meta name="twitter:description" content="Backend Developer specializing in PHP, Laravel, Go, APIs, and scalable backend systems." />
-  <meta name="twitter:image" content="https://yasserelgammal.github.io/assets/images/profile_pic_yasser_elgammal_512.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/images/profile_pic_yasser_elgammal_512.webp"
-    imagesrcset="assets/images/profile_pic_yasser_elgammal_256.webp 256w, assets/images/profile_pic_yasser_elgammal_512.webp 512w"
-    imagesizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px" type="image/webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script>
     (function () {
       let savedTheme = null;
-      try {
-        savedTheme = localStorage.getItem('theme');
-      } catch (error) {}
+      try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
     })();
   </script>
   <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* ── Full-page scroll snap (index.html only) ─────────────────────── */
+    @media (min-width: 768px) {
+      html { overflow: hidden; }
+
+      #main-content {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y proximity;
+        scroll-behavior: smooth;
+        scroll-padding-top: 4rem; /* clear fixed nav */
+      }
+
+      /* Every snap section */
+      #main-content > section {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Hero: keep its own padding, just center */
+      #main-content > section.hero-container {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+      }
+
+      /* content-sections: balanced vertical padding */
+      #main-content > section.content-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      /* CTA + footer: auto-height snap stop, centered */
+      #main-content > section.snap-cta-footer {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      /* Footer inside snap doesn't need its own margin */
+      #main-content > section.snap-cta-footer .site-footer {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+
+    /* Smooth scroll for anchor links on all sizes */
+    html { scroll-behavior: smooth; }
+
+    /* Hero banner layout (photo first on mobile/sm, right on desktop) */
+    .hero-banner-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .hero-banner-text {
+      flex: 1 1 32rem;
+      order: 2;
+    }
+
+    .hero-banner-avatar {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      order: 1;
+    }
+
+    .hero-avatar-frame {
+      width: 13rem;
+      height: 13rem;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 2px solid var(--color-border);
+      box-shadow: var(--shadow-surface-hover);
+      background: var(--color-surface);
+    }
+
+    /* Only on large desktop screens (>= 1024px) do text and photo sit side-by-side */
+    @media (min-width: 1024px) {
+      .hero-banner-text {
+        order: 1;
+      }
+      .hero-banner-avatar {
+        flex: 0 0 auto;
+        display: block;
+        order: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-banner-grid {
+        gap: 1.75rem;
+      }
+      .hero-avatar-frame {
+        width: 10.5rem;
+        height: 10.5rem;
+      }
+    }
+  </style>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Yasser Elgammal",
-      "jobTitle": "Backend Developer",
+      "jobTitle": "Backend Developer / Software Engineer",
       "url": "https://yasserelgammal.github.io/",
       "image": "https://yasserelgammal.github.io/assets/images/profile_pic_yasser_elgammal_512.jpg",
       "sameAs": [
@@ -51,23 +149,27 @@
         "https://twitter.com/yasserelgammal",
         "https://www.youtube.com/@yasser.elgammal"
       ],
-      "knowsAbout": ["PHP", "Laravel", "Go", "APIs", "Backend Architecture"]
+      "knowsAbout": ["PHP", "Laravel", "Go", "Green Framework", "Blue GO Framework", "MySQL", "PostgreSQL", "RESTful APIs", "System Architecture"]
     }
   </script>
 </head>
 
-<body class="gradient-bg min-h-screen font-inter">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav
-    class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-10 backdrop-blur-md border-b border-white border-opacity-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-      <div class="site-nav-inner flex justify-between items-center">
-        <a href="index.html" class="site-brand text-white text-xl font-bold" aria-label="Yasser Elgammal home">YE</a>
-        <div class="site-nav-links flex items-center gap-3 sm:gap-8 text-sm sm:text-base">
-          <a href="index.html" class="nav-link text-white font-medium" aria-current="page">Home</a>
-          <a href="projects.html" class="nav-link text-white font-medium">Projects</a>
-          <a href="contact.html" class="nav-link text-white font-medium">Contact</a>
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color mode">
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="site-nav-inner">
+        <a href="index.html" class="site-brand" aria-label="Yasser Elgammal Home">
+          YE <span>// backend</span>
+        </a>
+        <nav class="site-nav-links">
+          <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          <a href="about.html" class="nav-link"><span class="nav-short">About</span><span class="nav-full">About &amp; CV</span></a>
+          <a href="projects.html" class="nav-link"><span class="nav-short">Projects</span><span class="nav-full">Projects &amp; Open Source</span></a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
             <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36l-1.42 1.42M7.05 16.95l-1.41 1.41m12.72 0l-1.42-1.41M7.05 7.05L5.64 5.64M12 8a4 4 0 100 8 4 4 0 000-8z" />
@@ -77,148 +179,274 @@
                 d="M20.35 14.95A8.5 8.5 0 119.05 3.65 6.5 6.5 0 0020.35 14.95z" />
             </svg>
           </button>
-        </div>
+        </nav>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main id="main-content" tabindex="-1">
-    <section id="home" class="home-hero max-w-6xl mx-auto px-6 pt-28 pb-20">
-      <div class="hero-copy fade-in delay-1">
-        <p class="hero-kicker">Hello, I'm</p>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Yasser Elgammal</h1>
-        <p class="hero-role text-xl sm:text-2xl md:text-3xl text-blue-100 mb-6">
-          <span class="sr-only">Software Engineer, Backend Engineer, PHP / Laravel Developer, and Go Developer</span>
-          <span class="hero-role-text" data-typing-role aria-hidden="true">Backend Engineer</span><span class="hero-role-cursor" aria-hidden="true"></span>
-        </p>
-        <p class="hero-summary text-base sm:text-lg text-white text-opacity-90 leading-relaxed mb-8">I turn complex business ideas into scalable, practical backend systems that are built to last.</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="projects.html" class="btn-primary px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-white font-semibold text-base sm:text-lg inline-block text-center">View My Projects</a>
-          <a href="contact.html" class="btn-secondary px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-white font-semibold text-base sm:text-lg inline-block text-center">Get In Touch</a>
+    <!-- Hero / Lead Introduction -->
+    <section class="hero-container max-w-6xl mx-auto px-6">
+      <div class="hero-banner-grid">
+        <div class="hero-banner-text">
+          <span class="hero-kicker">Senior Backend Developer &amp; Software Engineer</span>
+          <h1 class="hero-title">Yasser Elgammal</h1>
+          <p class="hero-subtitle">
+            Building reliable backend systems with PHP, Laravel &amp; Go.
+          </p>
+          <p class="hero-description">
+            <span data-experience-text>4+ years</span> of professional experience engineering production-grade RESTful APIs, high-volume transactional backends, payment gateways, and queue workers across FinTech and ERP platforms. Creator of <strong>Green PHP Framework</strong> and <strong>Blue GO Framework</strong>.
+          </p>
+          <div class="flex" style="flex-wrap: wrap; gap: 1rem;">
+            <a href="about.html" class="btn-primary">View Engineering CV &rarr;</a>
+            <a href="projects.html" class="btn-outline">Explore Projects &amp; Frameworks</a>
+            <a href="contact.html" class="btn-secondary">Get In Touch</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-visual fade-in delay-2">
-          <div class="hero-photo w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.3)] border-4 border-white border-opacity-20 transition-shadow hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)]">
+        <!-- Visual Profile Avatar Frame -->
+        <div class="hero-banner-avatar">
+          <div class="hero-avatar-frame">
             <picture>
               <source type="image/webp"
                 srcset="assets/images/profile_pic_yasser_elgammal_256.webp 256w, assets/images/profile_pic_yasser_elgammal_512.webp 512w"
-                sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px" />
-              <img class="profile-image w-full h-full rounded-full"
-                src="assets/images/profile_pic_yasser_elgammal_512.jpg"
+                sizes="208px" />
+              <img src="assets/images/profile_pic_yasser_elgammal_512.jpg"
                 srcset="assets/images/profile_pic_yasser_elgammal_256.jpg 256w, assets/images/profile_pic_yasser_elgammal_512.jpg 512w"
-                sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
-                width="256" height="256" alt="Yasser Elgammal" decoding="async" fetchpriority="high" />
+                sizes="208px" width="208" height="208" alt="Yasser Elgammal" style="width:100%; height:100%; object-fit:cover;" fetchpriority="high" />
             </picture>
           </div>
-          <div class="hero-quote">
-            <span class="hero-quote-mark" aria-hidden="true">&ldquo;</span>
-            <strong><span>Eager to Learn.</span><span>Hungry to Build.</span></strong>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="highlights-strip">
+        <div class="highlight-box">
+          <div class="highlight-val" data-experience-years>4+</div>
+          <div class="highlight-title">Years Experience</div>
+          <div class="highlight-sub">Backend &amp; Distributed Systems</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-val">2</div>
+          <div class="highlight-title">Custom Frameworks</div>
+          <div class="highlight-sub">Green (PHP) &amp; Blue (Go)</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-val">6+</div>
+          <div class="highlight-title">Open-Source Packages</div>
+          <div class="highlight-sub">SDKs, Rate Limiters, Libraries</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Frameworks: Green & Blue GO -->
+    <section class="content-section max-w-6xl mx-auto px-6" aria-labelledby="frameworks-heading">
+      <div class="section-heading-wrap">
+        <span class="section-num">01</span>
+        <h2 id="frameworks-heading" class="section-title">Framework Architecture &amp; Core Engineering</h2>
+      </div>
+      <p class="section-lead">
+        To truly master backend architecture, I design and build frameworks from first principles—handling request lifecycles, dependency injection, and concurrency under the hood.
+      </p>
+
+      <div class="framework-duo-grid">
+        <!-- Green Framework (PHP) -->
+        <article class="framework-card green-accent">
+          <div>
+            <span class="framework-badge badge-green">Creator // PHP Ecosystem</span>
+            <h3>Green PHP Framework</h3>
+            <p>
+              A modern PHP framework designed from first principles to master backend internals, clean lifecycle management, and enterprise architectural patterns.
+            </p>
+
+            <ul class="framework-highlights-list">
+              <li><strong>IoC &amp; Auto-Wiring:</strong> Reflection-based Dependency Injection container resolving nested contracts and singletons.</li>
+              <li><strong>Tri-Phase Pipeline:</strong> Strict separation of Request lifecycle (Routing &rarr; Middleware Pipeline &rarr; Controller).</li>
+              <li><strong>Database &amp; Active Record:</strong> Query builder, migrations engine, model relations, and database seeders.</li>
+              <li><strong>Asynchronous Queues:</strong> Job dispatchers, background workers, and observer event lifecycles.</li>
+            </ul>
+
+            <div class="framework-pills">
+              <span class="f-pill">Routing Engine</span>
+              <span class="f-pill">IoC / DI Container</span>
+              <span class="f-pill">ORM / DB</span>
+              <span class="f-pill">Queues &amp; Workers</span>
+              <span class="f-pill">Observers</span>
+              <span class="f-pill">Middlewares</span>
+            </div>
           </div>
+          <div class="framework-actions">
+            <a href="https://github.com/YasserElgammal/green" target="_blank" rel="noopener noreferrer" class="btn-primary">GitHub &rarr;</a>
+            <a href="architecture.html" class="btn-outline">Architecture Docs</a>
+          </div>
+        </article>
+
+        <!-- Blue GO Framework (Go) -->
+        <article class="framework-card blue-accent">
+          <div>
+            <span class="framework-badge badge-blue">Creator // Go Ecosystem</span>
+            <h3>Blue GO Framework</h3>
+            <p>
+              A lightweight, high-performance Go web framework for building robust REST APIs with native concurrency, clean binding, and production-ready middleware.
+            </p>
+
+            <ul class="framework-highlights-list">
+              <li><strong>Tree-Based Routing:</strong> Fast route grouping, parametric dispatching, and strict URL normalization.</li>
+              <li><strong>Safe Type Binding:</strong> Strong JSON/Query payload decoders with integrated validation rules.</li>
+              <li><strong>Resilience Pipeline:</strong> Built-in panic recovery with stack traces, structured logging, and CORS.</li>
+              <li><strong>Graceful Teardown:</strong> Intercepts OS signals (SIGINT, SIGTERM) to drain active connections without data loss.</li>
+            </ul>
+
+            <div class="framework-pills">
+              <span class="f-pill">Route Groups</span>
+              <span class="f-pill">Safe Request Binding</span>
+              <span class="f-pill">Panic Recovery</span>
+              <span class="f-pill">CORS &amp; Logging</span>
+              <span class="f-pill">Graceful Shutdown</span>
+            </div>
+          </div>
+          <div class="framework-actions">
+            <a href="https://github.com/YasserElgammal/blue-go" target="_blank" rel="noopener noreferrer" class="btn-primary">GitHub &rarr;</a>
+          </div>
+        </article>
       </div>
-      <a class="section-jump" href="#about" aria-label="Scroll to About Me"><span aria-hidden="true">&darr;</span></a>
     </section>
 
-    <section id="about" class="home-section max-w-6xl mx-auto px-6" aria-labelledby="about-title">
-      <div class="section-heading">
-        <span>01</span>
-        <h2 id="about-title">About Me</h2>
+    <!-- How I Build -->
+    <section class="content-section max-w-6xl mx-auto px-6" aria-labelledby="approach-heading">
+      <div class="section-heading-wrap">
+        <span class="section-num">02</span>
+        <h2 id="approach-heading" class="section-title">How I Build</h2>
       </div>
-      <div class="about-grid">
-        <p>I’m a Backend Developer who enjoys turning complex ideas into simple, practical systems. I focus on building high-quality backends using Laravel, PHP, Go, and modern architecture patterns.</p>
-        <p>Solving real-world problems is what drives me. I’ve worked across Fintech, E-commerce, ERP, E-learning, and Booking platforms, always aiming to create software that makes life easier for users and businesses.</p>
+      <p class="section-lead">
+        <em>The engineering principles behind Green Framework &mdash; and the way I approach backend systems: from a clear foundation to software that can grow with confidence.</em>
+      </p>
+
+      <div class="principles-grid">
+        <article class="principle-card">
+          <span class="principle-step">01 // DESIGN</span>
+          <h3>Architecture &amp; Design</h3>
+          <p>I start with clear boundaries, explicit dependencies, and a well-defined application lifecycle.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-step">02 // PIPELINE</span>
+          <h3>Backend Engineering</h3>
+          <p>I build productive backends with clean pipelines, reliable validation, APIs, and maintainable abstractions.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-step">03 // PERSISTENCE</span>
+          <h3>Data &amp; Persistence</h3>
+          <p>I keep data access explicit and maintainable through clear boundaries, efficient queries, and thoughtful persistence design.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-step">04 // SCALE</span>
+          <h3>Performance &amp; Scalability</h3>
+          <p>I design systems that can evolve with confidence &mdash; keeping complexity controlled without sacrificing reliability.</p>
+        </article>
       </div>
-      <a class="section-jump" href="#approach" aria-label="Scroll to How I Build"><span aria-hidden="true">&darr;</span></a>
     </section>
 
-    <section id="approach" class="home-section max-w-6xl mx-auto px-6" aria-labelledby="expertise-title">
-      <div class="section-heading">
-        <span>02</span>
-        <h2 id="expertise-title">How I Build</h2>
+    <!-- Technical Stack Matrix -->
+    <section class="content-section max-w-6xl mx-auto px-6" aria-labelledby="stack-heading">
+      <div class="section-heading-wrap">
+        <span class="section-num">03</span>
+        <h2 id="stack-heading" class="section-title">Technologies &amp; Production Stack</h2>
       </div>
-      <p class="section-intro"><em>The engineering principles behind Green Framework &mdash; and the way I approach backend systems: from a clear foundation to software that can grow with confidence.</em></p>
-      <div class="expertise-grid green-story">
-        <article class="expertise-card"><span>01</span><h3>Architecture &amp; Design</h3><p>I start with clear boundaries, explicit dependencies, and a well-defined application lifecycle.</p></article>
-        <article class="expertise-card"><span>02</span><h3>Backend Engineering</h3><p>I build productive backends with clean pipelines, reliable validation, APIs, and maintainable abstractions.</p></article>
-        <article class="expertise-card"><span>03</span><h3>Data &amp; Persistence</h3><p>I keep data access explicit and maintainable through clear boundaries, efficient queries, and thoughtful persistence design.</p></article>
-        <article class="expertise-card"><span>04</span><h3>Performance &amp; Scalability</h3><p>I design systems that can evolve with confidence &mdash; keeping complexity controlled without sacrificing reliability.</p></article>
-      </div>
-      <a class="section-jump" href="#featured" aria-label="Scroll to Featured Project"><span aria-hidden="true">&darr;</span></a>
-    </section>
+      <p class="section-lead">The core technologies and architectural patterns I leverage daily across production environments:</p>
 
-    <section id="featured" class="home-section max-w-6xl mx-auto px-6" aria-labelledby="featured-title">
-      <div class="section-heading">
-        <span>03</span>
-        <h2 id="featured-title">Featured Project</h2>
-      </div>
-      <article class="featured-project">
-        <div>
-          <span class="featured-label">Open Source &middot; PHP</span>
-          <h3>Green Framework</h3>
-          <p>A lightweight PHP framework built for simplicity, speed, and a smooth developer experience.</p>
-          <div class="featured-tags"><span>PHP</span><span>Framework</span><span>Open Source</span></div>
+      <div class="domains-matrix">
+        <div class="domain-box">
+          <h3>Backend Languages &amp; Frameworks</h3>
+          <div class="meta-sub">Primary Development Core</div>
+          <div class="stack-tags-cloud">
+            <span class="stack-tag-pill">PHP</span>
+            <span class="stack-tag-pill">Go (Golang)</span>
+            <span class="stack-tag-pill">Laravel</span>
+            <span class="stack-tag-pill">Gin</span>
+            <span class="stack-tag-pill">Gorm</span>
+            <span class="stack-tag-pill">Livewire</span>
+            <span class="stack-tag-pill">RESTful APIs</span>
+            <span class="stack-tag-pill">Clean Architecture</span>
+            <span class="stack-tag-pill">Dependency Injection</span>
+          </div>
         </div>
-        <div class="featured-actions">
-          <a href="https://github.com/YasserElgammal/green" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
-          <a href="projects.html">All Projects</a>
+
+        <div class="domain-box">
+          <h3>Data Persistence &amp; Caching</h3>
+          <div class="meta-sub">Storage &amp; High Throughput</div>
+          <div class="stack-tags-cloud">
+            <span class="stack-tag-pill">MySQL</span>
+            <span class="stack-tag-pill">PostgreSQL</span>
+            <span class="stack-tag-pill">Redis</span>
+            <span class="stack-tag-pill">Advanced Indexing</span>
+            <span class="stack-tag-pill">Query Optimization</span>
+            <span class="stack-tag-pill">Database Schema Design</span>
+            <span class="stack-tag-pill">Migrations</span>
+          </div>
         </div>
-      </article>
-      <a class="section-jump" href="#experience" aria-label="Scroll to Industry Experience"><span aria-hidden="true">&darr;</span></a>
+
+        <div class="domain-box">
+          <h3>Integrations &amp; Workflows</h3>
+          <div class="meta-sub">Reliable Asynchronous Tasks</div>
+          <div class="stack-tags-cloud">
+            <span class="stack-tag-pill">Payment Gateways Integrations</span>
+            <span class="stack-tag-pill">Queues</span>
+            <span class="stack-tag-pill">Background Workers</span>
+            <span class="stack-tag-pill">Webhooks</span>
+            <span class="stack-tag-pill">Notifications</span>
+            <span class="stack-tag-pill">Authentication (Sanctum/JWT)</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="industries-section max-w-6xl mx-auto px-6" aria-label="Industry experience">
-      <span>Experience across</span>
-      <div><strong>Fintech</strong><strong>E-commerce</strong><strong>ERP</strong><strong>E-learning</strong><strong>Booking</strong></div>
-      <a class="section-jump" href="#contact-cta" aria-label="Scroll to Contact"><span aria-hidden="true">&darr;</span></a>
-    </section>
+    <!-- Call to Action + Footer (last snap stop) -->
+    <section class="snap-cta-footer">
+      <div class="max-w-6xl mx-auto px-6" style="width:100%;">
+        <div class="cta-card">
+          <div>
+            <span>Open for Opportunities</span>
+            <h2>Open to professional opportunities, collaboration, and technical discussions.</h2>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn-secondary">Start a Conversation &rarr;</a>
+          </div>
+        </div>
+      </div>
 
-    <section id="contact-cta" class="home-cta max-w-6xl mx-auto px-6">
-      <div><span>Have a backend challenge?</span><h2>Let’s build the right solution.</h2></div>
-      <a href="contact.html" class="btn-secondary px-8 py-4 rounded-lg text-white font-semibold text-lg inline-block text-center">Start a Conversation</a>
+      <!-- Global Footer -->
+      <footer class="site-footer" style="margin-top:auto;">
+        <div class="footer-socials">
+          <a href="https://github.com/yasserelgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/elgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/yasserelgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X / Twitter Profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@yasser.elgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube Channel">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+        <p>&copy; <span id="year"></span> Yasser Elgammal.</p>
+      </footer>
     </section>
   </main>
 
-  <footer class="home-footer text-center text-white text-opacity-90 leading-relaxed fade-in delay-4 my-8">
-    <div class="flex justify-center space-x-6 mb-4">
-      <a href="https://linkedin.com/in/elgammal" target="_blank" rel="noopener noreferrer"
-        class="text-white text-opacity-70 hover:text-opacity-100 transition-opacity">
-        <span class="sr-only">LinkedIn</span>
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-      </a>
-      <a href="https://twitter.com/yasserelgammal" target="_blank" rel="noopener noreferrer"
-        class="text-white text-opacity-70 hover:text-opacity-100 transition-opacity">
-        <span class="sr-only">X</span>
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-      </a>
-      <a href="https://github.com/yasserelgammal" target="_blank" rel="noopener noreferrer"
-        class="text-white text-opacity-70 hover:text-opacity-100 transition-opacity">
-        <span class="sr-only">GitHub</span>
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-        </svg>
-      </a>
-      <a href="https://www.youtube.com/@yasser.elgammal" target="_blank" rel="noopener noreferrer"
-        class="text-white text-opacity-70 hover:text-opacity-100 transition-opacity">
-        <span class="sr-only">YouTube</span>
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-        </svg>
-      </a>
-    </div>
-    <p class="text-sm">&copy; <span id="year"></span> Yasser Elgammal.</p>
-    <a class="back-to-hero" href="#home" aria-label="Back to the hero section"><span aria-hidden="true">&uarr;</span></a>
-  </footer>
-
   <script src="assets/js/theme.min.js" defer></script>
-  <script src="assets/js/typing.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

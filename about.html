@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Profile &amp; CV | Yasser Elgammal - Backend Software Engineer</title>
+  <meta name="description" id="meta-desc"
+    content="Professional Profile and Engineering CV of Yasser Elgammal. Backend Developer and Software Engineer with 4+ years of experience in PHP, Laravel, Go, systems architecture, and creator of Green Framework." />
+  <meta name="keywords"
+    content="Yasser Elgammal, Backend Developer, Software Engineer, CV, Resume, Profile, PHP, Laravel, Go, Systems Architecture, Creator of Green Framework, Blue GO, RESTful APIs, MySQL, PostgreSQL" />
+  <meta name="author" content="Yasser Elgammal" />
+  <link rel="canonical" href="https://yasserelgammal.github.io/about.html" />
+  <meta property="og:title" content="Engineering Profile &amp; CV | Yasser Elgammal - Backend Software Engineer" />
+  <meta property="og:description" id="meta-og-desc"
+    content="Professional Profile &amp; CV of Yasser Elgammal, Backend Engineer with 4+ years of experience building reliable systems with PHP, Laravel, and Go." />
+  <meta property="og:image" content="https://yasserelgammal.github.io/assets/images/profile_pic_yasser_elgammal_512.jpg" />
+  <meta property="og:url" content="https://yasserelgammal.github.io/about.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* CV Resume Profile Header */
+    .cv-profile-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-surface);
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cv-header-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .cv-photo-frame {
+      width: 10.5rem;
+      height: 10.5rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 2px solid var(--color-border);
+      background: var(--color-surface-muted);
+      box-shadow: var(--shadow-surface);
+    }
+
+    .cv-quick-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin: 1.25rem 0;
+      padding: 0.85rem 1.25rem;
+      background: var(--color-surface-muted);
+      border-radius: 0.5rem;
+      border: 1px solid var(--color-border);
+    }
+
+    .cv-quick-info strong {
+      color: var(--color-text);
+    }
+
+    .cv-timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      padding-bottom: 2.5rem;
+      border-left: 2px solid var(--color-border);
+    }
+
+    .cv-timeline-item:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .cv-timeline-dot {
+      position: absolute;
+      left: -0.42rem;
+      top: 0.25rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 999px;
+      background: var(--color-accent);
+      box-shadow: 0 0 0 4px var(--color-accent-soft);
+    }
+
+    .cv-timeline-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cv-timeline-head h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .cv-timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .cv-timeline-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv-timeline-duties {
+      list-style: disc;
+      padding-left: 1.25rem;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Nested sub-timeline for roles within the same company */
+    .cv-subtimeline {
+      margin-top: 1.25rem;
+      padding-left: 1.25rem;
+      border-left: 2px dashed var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cv-subrole {
+      position: relative;
+    }
+
+    .cv-subrole::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.25rem - 5px);
+      top: 0.35rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      border: 2px solid var(--color-surface);
+    }
+
+    .cv-subrole-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cv-subrole-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .cv-subrole-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .cv-subrole-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: var(--color-accent-soft);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tech-skill-category {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .tech-skill-category h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tech-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tech-pill-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.4rem;
+      background: var(--color-surface-muted);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+
+    @media (max-width: 860px) {
+      .cv-header-grid { grid-template-columns: 1fr; text-align: center; }
+      .cv-photo-frame { margin: 0 auto; }
+      .cv-quick-info { justify-content: center; text-align: left; }
+      .tech-skills-matrix { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="site-nav-inner">
+        <a href="index.html" class="site-brand" aria-label="Yasser Elgammal Home">
+          YE <span>// cv</span>
+        </a>
+        <nav class="site-nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link" aria-current="page"><span class="nav-short">About</span><span class="nav-full">About &amp; CV</span></a>
+          <a href="projects.html" class="nav-link"><span class="nav-short">Projects</span><span class="nav-full">Projects &amp; Open Source</span></a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+            <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36l-1.42 1.42M7.05 16.95l-1.41 1.41m12.72 0l-1.42-1.41M7.05 7.05L5.64 5.64M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+            <svg class="theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.35 14.95A8.5 8.5 0 119.05 3.65 6.5 6.5 0 0020.35 14.95z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="pt-28 pb-16">
+    <section class="max-w-6xl mx-auto px-6">
+      <!-- Profile / CV Header Card -->
+      <div class="cv-profile-card">
+        <div class="cv-header-grid">
+          <div class="cv-photo-frame">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/profile_pic_yasser_elgammal_256.webp 256w, assets/images/profile_pic_yasser_elgammal_512.webp 512w"
+                sizes="168px" />
+              <img src="assets/images/profile_pic_yasser_elgammal_512.jpg"
+                srcset="assets/images/profile_pic_yasser_elgammal_256.jpg 256w, assets/images/profile_pic_yasser_elgammal_512.jpg 512w"
+                sizes="168px" width="168" height="168" alt="Yasser Elgammal" style="width:100%; height:100%; object-fit:cover;" fetchpriority="high" />
+            </picture>
+          </div>
+
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap;">
+              <h1 class="hero-title" style="margin-bottom: 0.25rem;">Yasser Elgammal</h1>
+              <span class="hero-kicker" style="margin-bottom: 0;"><span data-experience-years>4+</span> Years Professional Experience</span>
+            </div>
+            <p class="hero-subtitle" style="margin-bottom: 1rem;">Senior Backend Developer &amp; Software Engineer &mdash; PHP &amp; Go</p>
+            <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 50rem;">
+              Experienced software engineer specializing in scalable backend systems, RESTful APIs, and database architecture using PHP, Laravel, and Go. Proven track record in FinTech, ERP, E-commerce, and healthcare systems, with deep expertise in payment integrations, background queues, and framework engineering.
+            </p>
+
+            <div class="cv-quick-info">
+              <span><strong>Location:</strong> Damietta, Egypt (Open to Relocation)</span>
+              <span><strong>Languages:</strong> Arabic (Native), English (Advanced)</span>
+              <span><strong>Email:</strong> YasserMElgammal@gmail.com</span>
+              <span><strong>GitHub:</strong> <a href="https://github.com/YasserElgammal" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">@YasserElgammal</a></span>
+            </div>
+
+            <div class="flex" style="flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;">
+              <a href="contact.html" class="btn-primary">Contact / Hire Me &rarr;</a>
+              <a href="https://linkedin.com/in/elgammal" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn Profile</a>
+              <a href="projects.html" class="btn-outline">View Open-Source Work</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills Matrix -->
+      <div class="content-section" style="padding-top: 2rem;">
+        <div class="section-heading-wrap">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Technical Skills &amp; Domain Expertise</h2>
+        </div>
+        <p class="section-lead">Comprehensive breakdown of technical capabilities and architectural methodologies:</p>
+
+        <div class="tech-skills-matrix">
+          <div class="tech-skill-category">
+            <h4>Languages &amp; Core</h4>
+            <div class="tech-pill-group">
+              <span class="tech-pill-tag">PHP (Advanced)</span>
+              <span class="tech-pill-tag">Go / Golang</span>
+              <span class="tech-pill-tag">JavaScript</span>
+              <span class="tech-pill-tag">HTML5 &amp; CSS3</span>
+              <span class="tech-pill-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="tech-skill-category">
+            <h4>Frameworks &amp; Libraries</h4>
+            <div class="tech-pill-group">
+              <span class="tech-pill-tag">Laravel</span>
+              <span class="tech-pill-tag">GIN (Go)</span>
+              <span class="tech-pill-tag">GORM (Go)</span>
+              <span class="tech-pill-tag">Green Framework</span>
+              <span class="tech-pill-tag">Blue GO Framework</span>
+              <span class="tech-pill-tag">Livewire</span>
+              <span class="tech-pill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="tech-skill-category">
+            <h4>Databases &amp; Caching</h4>
+            <div class="tech-pill-group">
+              <span class="tech-pill-tag">MySQL (Schema &amp; Query Optimization)</span>
+              <span class="tech-pill-tag">PostgreSQL</span>
+              <span class="tech-pill-tag">Redis Caching</span>
+              <span class="tech-pill-tag">Migrations &amp; Seeders</span>
+            </div>
+          </div>
+
+          <div class="tech-skill-category">
+            <h4>Architecture &amp; Practices</h4>
+            <div class="tech-pill-group">
+              <span class="tech-pill-tag">RESTful APIs</span>
+              <span class="tech-pill-tag">MVC / HMVC Patterns</span>
+              <span class="tech-pill-tag">Service Pattern</span>
+              <span class="tech-pill-tag">Dependency Injection</span>
+              <span class="tech-pill-tag">Clean Architecture</span>
+              <span class="tech-pill-tag">Agile / Scrum</span>
+              <span class="tech-pill-tag">Code Review</span>
+            </div>
+          </div>
+
+          <div class="tech-skill-category" style="grid-column: 1 / -1;">
+            <h4>Backend Systems &amp; Integrations</h4>
+            <div class="tech-pill-group">
+              <span class="tech-pill-tag">Payment Gateways (Stripe, Tabby)</span>
+              <span class="tech-pill-tag">API Authentication (Sanctum, Passport, JWT)</span>
+              <span class="tech-pill-tag">Background Queues &amp; Workers</span>
+              <span class="tech-pill-tag">Real-time Notifications</span>
+              <span class="tech-pill-tag">Third-Party REST Integrations</span>
+              <span class="tech-pill-tag">Package &amp; SDK Development</span>
+              <span class="tech-pill-tag">Git &amp; Linux CLI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience Timeline -->
+      <div class="content-section">
+        <div class="section-heading-wrap">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Professional Work Experience</h2>
+        </div>
+        <p class="section-lead">Full-time engineering roles delivering mission-critical applications:</p>
+
+        <div style="margin-top: 2rem;">
+          <!-- AAIT (Career Progression Timeline) -->
+          <article class="cv-timeline-item">
+            <div class="cv-timeline-dot"></div>
+            <div class="cv-timeline-head">
+              <h3>AAIT (Advanced Systems)</h3>
+              <span class="cv-timeline-date">Sep 2023 &ndash; Present</span>
+            </div>
+            <div class="cv-timeline-company">Full-Time &middot; Core Backend &amp; Architecture &middot; Mansoura, Egypt (Onsite)</div>
+
+            <div class="cv-subtimeline">
+              <!-- Promotion: Senior Backend Developer -->
+              <div class="cv-subrole">
+                <div class="cv-subrole-head">
+                  <span class="cv-subrole-title">Senior Backend Developer</span>
+                  <span class="cv-subrole-date">Sep 2025 &ndash; Present</span>
+                </div>
+                <span class="cv-subrole-badge">Promoted</span>
+                <ul class="cv-timeline-duties">
+                  <li>Lead end-to-end backend architecture and system design for enterprise-grade, multi-tenant platforms across FinTech, ERP, E-Commerce, E-Learning, and medical booking ecosystems.</li>
+                  <li>Architect resilient payment infrastructures, double-entry wallet ledger systems, and automated webhook retry pipelines with strict idempotency keys and ACID transaction guarantees.</li>
+                  <li>Drive database engineering across high-volume MySQL clusters &mdash; performing query profiling, composite indexing, schema partitioning, and Redis caching to slash p99 latency under heavy production load.</li>
+                  <li>Enforce modern engineering standards and architectural patterns (Clean Architecture, Service/Repository layers, HMVC), eliminating tech debt and establishing zero-downtime deployment practices.</li>
+                  <li>Conduct rigorous architectural reviews and code audits, mentor mid-level and junior developers, and steer technical roadmaps within Agile/Scrum cross-functional teams.</li>
+                </ul>
+              </div>
+
+              <!-- Promotion: Mid-Level Backend Developer -->
+              <div class="cv-subrole">
+                <div class="cv-subrole-head">
+                  <span class="cv-subrole-title">Mid-Level Backend Developer</span>
+                  <span class="cv-subrole-date">Jan 2024 &ndash; Aug 2025</span>
+                </div>
+                <span class="cv-subrole-badge">Promoted</span>
+                <ul class="cv-timeline-duties">
+                  <li>Developed and maintained core server-side business logic for high-traffic platforms (FinTech, ERP modules, E-Commerce, and clinic reservation systems) using PHP and Laravel.</li>
+                  <li>Engineered and standardized low-latency RESTful API suites powering seamless data sync between mobile apps (iOS &amp; Android), web dashboards, and third-party integrations.</li>
+                  <li>Collaborated closely with frontend engineers to build snappy, dynamic interfaces utilizing Livewire, Alpine.js, and Tailwind CSS.</li>
+                  <li>Optimized relational database schemas, index strategies, and Eloquent ORM queries to maximize throughput and guarantee data consistency.</li>
+                  <li>Authored clean, modular, and maintainable code adhering to MVC/HMVC standards; actively participated in Agile sprint cycles, task estimations, and internal tech documentation.</li>
+                </ul>
+              </div>
+
+              <!-- Initial Role: Junior Backend Developer -->
+              <div class="cv-subrole">
+                <div class="cv-subrole-head">
+                  <span class="cv-subrole-title">Junior Backend Developer</span>
+                  <span class="cv-subrole-date">Sep 2023 &ndash; Jan 2024</span>
+                </div>
+                <ul class="cv-timeline-duties">
+                  <li>Onboarded onto production Laravel codebases across FinTech and ERP platforms, implementing assigned API modules and bug-fix cycles under senior guidance.</li>
+                  <li>Contributed to database schema design, writing Eloquent queries, and participating in sprint planning and code review cycles.</li>
+                  <li>Integrated initial third-party services (payment gateways, SMS providers) under supervision, building practical exposure to production systems.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- AlFintech -->
+          <article class="cv-timeline-item">
+            <div class="cv-timeline-dot"></div>
+            <div class="cv-timeline-head">
+              <h3>Junior Backend Developer</h3>
+              <span class="cv-timeline-date">Aug 2022 &ndash; Sep 2023</span>
+            </div>
+            <div class="cv-timeline-company">AlFintech &middot; Full-Time</div>
+            <ul class="cv-timeline-duties">
+              <li>Built and maintained enterprise Laravel-based applications following Agile methodologies.</li>
+              <li>Developed RESTful API modules for ERP systems including finance, HR, manufacturing, and supply chain.</li>
+              <li>Participated in backend architecture discussions, database design, migration strategies, and third-party integrations.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-card">
+        <div>
+          <span>Let's Connect</span>
+          <h2>Open to professional opportunities, collaboration, and technical discussions.</h2>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-secondary">Start a Conversation &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <a href="https://github.com/yasserelgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/elgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+      <a href="https://twitter.com/yasserelgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X / Twitter Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@yasser.elgammal" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube Channel">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+    </div>
+    <p>&copy; <span id="year"></span> Yasser Elgammal. Crafted with clean backend engineering standards.</p>
+  </footer>
+
+  <script src="assets/js/theme.min.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
