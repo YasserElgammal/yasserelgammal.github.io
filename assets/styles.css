@@ -1591,3 +1591,15 @@ button {
 /* Page transition */
 body { opacity: 0; transition: opacity 0.3s ease; }
 body.loaded { opacity: 1; }
+
+/* Responsive section title for small screens */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 1.5rem; /* smaller heading on mobile */
+    margin-bottom: 1rem;
+  }
+  .section-title::after {
+    width: 30px;
+    height: 2px;
+  }
+}
