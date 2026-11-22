@@ -1247,52 +1247,6 @@ button {
 
 /* From index.html */
 
-    /* ── Full-page scroll snap (index.html only via body.page-home) ───── */
-    @media (min-width: 768px) {
-      /* Only lock scroll on the home page */
-      body.page-home { overflow: hidden; }
-
-      body.page-home #main-content {
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-snap-type: y proximity;
-        scroll-behavior: smooth;
-        scroll-padding-top: 72px; /* match fixed navbar height */
-      }
-
-      body.page-home #main-content > section {
-        scroll-snap-align: start;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      body.page-home #main-content > section.hero-container {
-        padding-top: 5rem;
-        padding-bottom: 3rem;
-      }
-
-      body.page-home #main-content > section.content-section {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      body.page-home #main-content > section.snap-cta-footer {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      body.page-home #main-content > section.snap-cta-footer .site-footer {
-        margin-top: 0;
-        width: 100%;
-      }
-    }
-
     /* Smooth scroll for anchor links on all sizes */
     html { scroll-behavior: smooth; }
 
