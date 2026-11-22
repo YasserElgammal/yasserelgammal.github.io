@@ -63,6 +63,11 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+html {
+    /* Offset anchor-link scroll by navbar height so content isn't hidden under it */
+    scroll-padding-top: 72px;
+}
+
 body {
     margin: 0;
     background-color: var(--color-background);
@@ -817,9 +822,11 @@ button {
 }
 
 .footer-social-link svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
     fill: currentColor;
+    display: block;
+    flex-shrink: 0;
 }
 
 /* Responsive Breakpoints */
@@ -1240,20 +1247,20 @@ button {
 
 /* From index.html */
 
-    /* ── Full-page scroll snap (index.html only) ─────────────────────── */
+    /* ── Full-page scroll snap (index.html only via body.page-home) ───── */
     @media (min-width: 768px) {
-      html { overflow: hidden; }
+      /* Only lock scroll on the home page */
+      body.page-home { overflow: hidden; }
 
-      #main-content {
+      body.page-home #main-content {
         height: 100vh;
         overflow-y: scroll;
         scroll-snap-type: y proximity;
         scroll-behavior: smooth;
-        scroll-padding-top: 4rem; /* clear fixed nav */
+        scroll-padding-top: 72px; /* match fixed navbar height */
       }
 
-      /* Every snap section */
-      #main-content > section {
+      body.page-home #main-content > section {
         scroll-snap-align: start;
         min-height: 100vh;
         display: flex;
@@ -1261,20 +1268,17 @@ button {
         justify-content: center;
       }
 
-      /* Hero: keep its own padding, just center */
-      #main-content > section.hero-container {
+      body.page-home #main-content > section.hero-container {
         padding-top: 5rem;
         padding-bottom: 3rem;
       }
 
-      /* content-sections: balanced vertical padding */
-      #main-content > section.content-section {
+      body.page-home #main-content > section.content-section {
         padding-top: 4rem;
         padding-bottom: 4rem;
       }
 
-      /* CTA + footer: auto-height snap stop, centered */
-      #main-content > section.snap-cta-footer {
+      body.page-home #main-content > section.snap-cta-footer {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -1283,8 +1287,7 @@ button {
         gap: 3rem;
       }
 
-      /* Footer inside snap doesn't need its own margin */
-      #main-content > section.snap-cta-footer .site-footer {
+      body.page-home #main-content > section.snap-cta-footer .site-footer {
         margin-top: 0;
         width: 100%;
       }
@@ -1603,3 +1606,4 @@ body.loaded { opacity: 1; }
     height: 2px;
   }
 }
+
