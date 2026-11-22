@@ -1225,47 +1225,325 @@ button {
   
 
 /* From architecture.html */
+.architecture-shell {
+    width: min(100%, 880px);
+    margin: 0 auto;
+}
 
-      .architecture-shell { width: min(100%, 960px); margin: 0 auto; }
-      .architecture-header { margin-bottom: 2rem; }
-      .architecture-header a { color: var(--color-primary-strong); font-weight: 600; }
-      .architecture-document { color: var(--color-text); line-height: 1.75; overflow-wrap: anywhere; }
-      .architecture-document > * + * { margin-top: 1rem; }
-      .architecture-document h1,
-      .architecture-document h2,
-      .architecture-document h3,
-      .architecture-document h4 { color: var(--color-text); font-weight: 700; line-height: 1.25; margin-top: 2rem; }
-      .architecture-document h1 { font-size: 2rem; }
-      .architecture-document h2 { font-size: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
-      .architecture-document h3 { font-size: 1.25rem; }
-      .architecture-document :is(h1, h2, h3, h4, h5, h6) { scroll-margin-top: 6.5rem; }
-      .architecture-document ul,
-      .architecture-document ol { padding-left: 1.5rem; }
-      .architecture-document ul { list-style: disc; }
-      .architecture-document ol { list-style: decimal; }
-      .architecture-document ul ul { list-style: circle; }
-      .architecture-document ul ul ul { list-style: square; }
-      .architecture-document li + li { margin-top: 0.35rem; }
-      .architecture-document a { color: var(--color-primary-strong); text-decoration: underline; text-underline-offset: 0.2em; }
-      .architecture-document strong { color: var(--color-text); font-weight: 700; }
-      .architecture-document blockquote { padding: 0.75rem 1rem; border-left: 4px solid var(--color-primary-strong); background: var(--color-surface-muted); color: var(--color-text-muted); }
-      .architecture-document blockquote > :first-child { margin-top: 0; }
-      .architecture-document blockquote > :last-child { margin-bottom: 0; }
-      .architecture-document hr { margin: 2rem 0; border: 0; border-top: 1px solid var(--color-border); }
-      .architecture-document img { display: block; max-width: 100%; height: auto; }
-      .architecture-document code { padding: 0.15rem 0.35rem; border-radius: 4px; background: var(--color-surface-muted); font-size: 0.9em; }
-      .architecture-document pre { max-width: 100%; padding: 1rem; overflow-x: auto; border: 1px solid var(--color-border); border-radius: 6px; background: #0f172a; color: #e2e8f0; }
-      .architecture-document pre code { padding: 0; background: transparent; color: inherit; }
-      .architecture-document table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; }
-      .architecture-document th,
-      .architecture-document td { padding: 0.65rem 0.8rem; border: 1px solid var(--color-border); text-align: left; white-space: nowrap; }
-      .architecture-document th { background: var(--color-surface-muted); font-weight: 600; }
-      .mermaid-scroll { width: 100%; overflow-x: auto; overflow-y: hidden; padding: 1rem 0; }
-      .mermaid-scroll .mermaid { width: 100%; text-align: center; }
-      .mermaid-scroll svg { display: block; max-width: none !important; height: auto; margin: 0 auto; }
-      .architecture-status { padding: 2rem; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-surface); color: var(--color-text-muted); text-align: center; }
-      .architecture-status.error { border-color: #dc2626; color: #b91c1c; }
-      :root[data-theme="dark"] .architecture-status.error { color: #fca5a5; }
+.architecture-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.architecture-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.architecture-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.architecture-back-link:hover {
+    color: var(--color-primary);
+    transform: translateX(-3px);
+}
+
+.architecture-repo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--color-text-subtle);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.architecture-repo-badge:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-primary);
+}
+
+.architecture-repo-badge svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+.architecture-title {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+}
+
+.architecture-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.architecture-document {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.architecture-document p {
+    margin: 1.25rem 0;
+}
+
+.architecture-document h1,
+.architecture-document h2,
+.architecture-document h3,
+.architecture-document h4 {
+    color: var(--color-text);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.architecture-document h1 {
+    font-size: 2.1rem;
+    margin-top: 3.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.architecture-document h2 {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.architecture-document h3 {
+    font-size: 1.25rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.architecture-document h4 {
+    font-size: 1.05rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.architecture-document :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 6.5rem;
+}
+
+.architecture-document ul,
+.architecture-document ol {
+    padding-left: 1.75rem;
+    margin: 1.25rem 0;
+}
+
+.architecture-document ul { list-style: disc; }
+.architecture-document ol { list-style: decimal; }
+.architecture-document li + li { margin-top: 0.45rem; }
+
+.architecture-document a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.architecture-document a:hover {
+    opacity: 0.85;
+}
+
+.architecture-document strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.architecture-document blockquote {
+    padding: 1.1rem 1.4rem;
+    border-left: 4px solid var(--color-primary);
+    background: var(--color-surface);
+    border-radius: 0 0.75rem 0.75rem 0;
+    color: var(--color-text);
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin: 1.75rem 0;
+}
+
+.architecture-document blockquote > :first-child { margin-top: 0; }
+.architecture-document blockquote > :last-child { margin-bottom: 0; }
+
+.architecture-document hr {
+    margin: 3rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.architecture-document img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    margin: 1.5rem auto;
+}
+
+.architecture-document code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.375rem;
+    background: var(--color-surface-muted);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+}
+
+.architecture-document pre {
+    max-width: 100%;
+    padding: 1.35rem;
+    margin: 1.75rem 0;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    background: #090e1a;
+    color: #f1f5f9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.architecture-document pre code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border: none;
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.architecture-document table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+}
+
+.architecture-document th,
+.architecture-document td {
+    padding: 0.85rem 1.15rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.architecture-document th {
+    background: var(--color-surface-muted);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.architecture-document tr:last-child td {
+    border-bottom: none;
+}
+
+.mermaid-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 1rem;
+    margin: 2.25rem 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    box-shadow: var(--shadow-surface);
+}
+
+.mermaid-scroll .mermaid {
+    width: 100%;
+    text-align: center;
+}
+
+.mermaid-scroll svg {
+    display: block;
+    max-width: none !important;
+    height: auto;
+    margin: 0 auto;
+}
+
+.architecture-status {
+    padding: 3rem 2rem;
+    border: 1px dashed var(--color-border);
+    border-radius: 0.85rem;
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.architecture-status.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.architecture-spinner {
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.architecture-status.error {
+    border-color: rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.06);
+    color: #ef4444;
+}
+
+:root[data-theme="dark"] .architecture-status.error {
+    color: #fca5a5;
+}
+
+.architecture-footer-actions {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
     
 
 /* From index.html */
