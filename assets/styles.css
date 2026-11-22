@@ -1588,3 +1588,6 @@ button {
       .contact-grid { grid-template-columns: 1fr; }
     }
   
+/* Page transition */
+body { opacity: 0; transition: opacity 0.3s ease; }
+body.loaded { opacity: 1; }
