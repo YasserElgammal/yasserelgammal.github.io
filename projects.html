@@ -88,7 +88,14 @@
                 <h3>Green Framework</h3>
                 <span class="project-tag">PHP Framework</span>
               </div>
-              <p>A modern PHP framework focused on clean architecture, simplicity, dependency injection, and framework internals.</p>
+              <dl class="case-study">
+                <dt>The problem</dt>
+                <dd>Provide a PHP framework with explicit dependencies and a predictable request lifecycle, keeping the core extensible without hiding application behavior behind excessive abstraction.</dd>
+                <dt>My role</dt>
+                <dd>Author of Green Core, implementing the framework's application lifecycle, routing, and supporting backend components.</dd>
+                <dt>Architectural decision</dt>
+                <dd>Separate route registration, matching, and dispatch; execute middleware as an onion pipeline; let the application container own service lifecycles; and separate ORM data models from persistence through Table Gateway and Data Mapper patterns.</dd>
+              </dl>
               <div class="project-pills">
                 <span class="project-pill">Routing</span>
                 <span class="project-pill">IoC Container</span>
@@ -111,7 +118,14 @@
                 <h3>Blue GO Framework</h3>
                 <span class="project-tag">Go Framework</span>
               </div>
-              <p>A lightweight Go web framework for building REST APIs with route groups, centralized error handling, safe request binding, and panic recovery.</p>
+              <dl class="case-study">
+                <dt>The problem</dt>
+                <dd>Provide reusable HTTP building blocks for Go REST APIs while leaving database, validation library, and application architecture choices to the developer.</dd>
+                <dt>My role</dt>
+                <dd>Creator and backend engineer, designing and implementing Blue GO and its HTTP request lifecycle.</dd>
+                <dt>Architectural decision</dt>
+                <dd>Build on net/http with separate app, router, HTTP, and middleware packages behind a root API. Combine JSON binding and centralized errors with composable middleware and an opt-in graceful shutdown helper with a ten-second drain timeout.</dd>
+              </dl>
               <div class="project-pills">
                 <span class="project-pill">Go</span>
                 <span class="project-pill">REST APIs</span>
@@ -132,7 +146,14 @@
                 <h3>Rate Limiter Go Library</h3>
                 <span class="project-tag">Go Algorithm</span>
               </div>
-              <p>A thread-safe Token Bucket rate limiter library for Go applications to control traffic per key (IP, user ID, API token) with configurable bursts.</p>
+              <dl class="case-study">
+                <dt>The problem</dt>
+                <dd>Control traffic per IP, user ID, or API token while allowing short bursts and handling concurrent requests safely.</dd>
+                <dt>My role</dt>
+                <dd>Creator and Go developer, designing and implementing a reusable rate limiting library for Go applications.</dd>
+                <dt>Architectural decision</dt>
+                <dd>Separate Token Bucket logic from storage through a Store interface. Configure refill rate and burst capacity, track buckets per key, and use atomic updates in the shared in-memory store to coordinate concurrent limiter instances.</dd>
+              </dl>
               <div class="project-pills">
                 <span class="project-pill">Go</span>
                 <span class="project-pill">Token Bucket</span>

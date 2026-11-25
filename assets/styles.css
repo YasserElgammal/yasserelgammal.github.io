@@ -17,7 +17,7 @@
     --color-border-hover: rgba(96, 165, 250, 0.45);
     --color-text: #f8fafc;
     --color-text-muted: #94a3b8;
-    --color-text-subtle: #64748b;
+    --color-text-subtle: #94a3b8;
     --color-primary: #38bdf8;
     --color-primary-strong: #0284c7;
     --color-primary-soft: rgba(56, 189, 248, 0.12);
@@ -42,7 +42,7 @@
     --color-border-hover: #93c5fd;
     --color-text: #0f172a;
     --color-text-muted: #475569;
-    --color-text-subtle: #94a3b8;
+    --color-text-subtle: #475569;
     --color-primary: #0284c7;
     --color-primary-strong: #0369a1;
     --color-primary-soft: #e0f2fe;
@@ -1960,8 +1960,17 @@ button {
     }
   
 /* Page transition */
-body { opacity: 0; transition: opacity 0.3s ease; }
-body.loaded { opacity: 1; }
+body { opacity: 1; }
+body.page-transitions-enabled { transition: opacity 0.3s ease; }
+body.page-transitions-enabled.is-leaving { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-transitions-enabled { transition: none; }
+}
+
+.case-study { margin: 0 0 1.5rem; }
+.case-study dt { color: var(--color-text); font-weight: 700; margin-top: 1rem; }
+.case-study dd { margin: 0.35rem 0 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; }
 
 /* Responsive section title for small screens */
 @media (max-width: 640px) {
