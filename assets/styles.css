@@ -322,6 +322,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    border: 0;
     font-weight: 600;
     padding: 0.75rem 1.6rem;
     border-radius: 0.6rem;
@@ -1844,6 +1845,10 @@ button {
       box-shadow: var(--shadow-surface);
     }
 
+    .contact-card .btn-primary {
+      width: 100%;
+    }
+
     .contact-direct-item {
       display: flex;
       align-items: center;
@@ -1981,6 +1986,448 @@ body.page-transitions-enabled.is-leaving { opacity: 0; }
   .section-title::after {
     width: 30px;
     height: 2px;
+  }
+}
+
+/* Complete small-screen pass shared by every page */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  main,
+  section,
+  article,
+  header,
+  footer,
+  nav,
+  div,
+  form,
+  dl {
+    min-width: 0;
+  }
+
+  .px-4,
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .pt-28 {
+    padding-top: 5.5rem;
+  }
+
+  .pb-16,
+  .pb-20 {
+    padding-bottom: 3rem;
+  }
+
+  .site-nav-inner {
+    min-height: 3.5rem;
+  }
+
+  .site-brand {
+    font-size: 1.05rem;
+    flex: 0 0 auto;
+  }
+
+  .site-nav-links {
+    min-width: 0;
+    gap: clamp(0.5rem, 2.5vw, 0.85rem);
+    font-size: clamp(0.76rem, 3.2vw, 0.84rem);
+  }
+
+  .nav-link {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 2.75rem;
+  }
+
+  .hero-container {
+    padding-top: 5.25rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .hero-banner-text {
+    flex-basis: 100%;
+  }
+
+  .hero-kicker {
+    max-width: 100%;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    padding: 0.3rem 0.65rem;
+    white-space: normal;
+  }
+
+  .hero-title,
+  .architecture-title {
+    font-size: clamp(2rem, 11vw, 2.75rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.05rem, 5vw, 1.3rem);
+    line-height: 1.45;
+  }
+
+  .hero-description,
+  .section-lead,
+  .architecture-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .hero-description,
+  .section-lead {
+    margin-bottom: 1.5rem;
+  }
+
+  .content-section {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
+
+  .section-heading-wrap {
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-num {
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    flex: 0 0 auto;
+  }
+
+  .section-title {
+    margin-bottom: 0;
+    line-height: 1.25;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    min-height: 2.75rem;
+    max-width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 0.55rem;
+    font-size: 0.875rem;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-banner-text > .flex,
+  .framework-actions,
+  .architecture-footer-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem !important;
+  }
+
+  .hero-banner-text > .flex > a,
+  .framework-actions > a,
+  .architecture-footer-actions > a {
+    width: 100%;
+  }
+
+  .highlights-strip {
+    gap: 0.85rem;
+    margin: 2rem 0 2.75rem;
+  }
+
+  .highlight-box,
+  .framework-card,
+  .principle-card,
+  .domain-box,
+  .project-item,
+  .tech-skill-category,
+  .contact-card,
+  .writing-card {
+    padding: 1.25rem;
+    border-radius: 0.8rem;
+  }
+
+  .highlight-box {
+    flex-basis: 100%;
+  }
+
+  .highlight-val {
+    font-size: 1.55rem;
+  }
+
+  .framework-duo-grid,
+  .principles-grid,
+  .domains-matrix,
+  .project-card-grid,
+  .tech-skills-matrix,
+  .contact-grid {
+    gap: 1rem;
+  }
+
+  .framework-card h3,
+  .writing-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .framework-card p,
+  .principle-card p,
+  .project-item p,
+  .writing-card p,
+  .case-study dd {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .framework-pills,
+  .stack-tags-cloud,
+  .project-pills,
+  .tech-pill-group,
+  .writing-topics {
+    gap: 0.35rem;
+  }
+
+  .f-pill,
+  .stack-tag-pill,
+  .project-pill,
+  .tech-pill-tag,
+  .writing-topic-pill,
+  .framework-badge,
+  .project-tag,
+  .cv-subrole-badge,
+  .architecture-repo-badge {
+    max-width: 100%;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    padding: 0.25rem 0.5rem;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .cta-card {
+    margin: 3rem auto;
+    padding: 1.4rem;
+    gap: 1.25rem;
+    border-radius: 0.9rem;
+  }
+
+  .cta-card h2 {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+
+  .site-footer {
+    padding: 2.5rem 1rem;
+  }
+
+  .footer-social-link {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .cv-profile-card {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    border-radius: 0.9rem;
+  }
+
+  .cv-header-grid {
+    gap: 1.25rem;
+  }
+
+  .cv-photo-frame {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+
+  .cv-quick-info {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .cv-timeline-item {
+    padding-left: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .cv-timeline-head,
+  .cv-subrole-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .cv-timeline-head h3 {
+    font-size: 1.1rem;
+  }
+
+  .cv-timeline-duties {
+    padding-left: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .cv-subtimeline {
+    padding-left: 1rem;
+  }
+
+  .cv-subrole::before {
+    left: calc(-1rem - 5px);
+  }
+
+  .writing-card {
+    gap: 1.25rem;
+  }
+
+  .writing-card-action,
+  .writing-card-action .btn-primary {
+    width: 100%;
+  }
+
+  .architecture-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .architecture-meta-bar {
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .architecture-document {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  .architecture-document h1 {
+    font-size: 1.65rem;
+    margin-top: 2.5rem;
+  }
+
+  .architecture-document h2 {
+    font-size: 1.35rem;
+    margin-top: 2.25rem;
+  }
+
+  .architecture-document h3 {
+    font-size: 1.15rem;
+  }
+
+  .architecture-document ul,
+  .architecture-document ol {
+    padding-left: 1.25rem;
+  }
+
+  .architecture-document blockquote,
+  .architecture-document pre,
+  .architecture-status,
+  .mermaid-scroll {
+    padding: 1rem;
+  }
+
+  .architecture-document pre code {
+    font-size: 0.8rem;
+  }
+
+  .architecture-document th,
+  .architecture-document td {
+    padding: 0.7rem 0.8rem;
+    min-width: 8rem;
+  }
+
+  .contact-grid {
+    margin-top: 1.5rem;
+  }
+
+  .contact-direct-item {
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .contact-direct-item .icon-box {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .contact-direct-item .detail-val {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .form-control {
+    min-height: 2.75rem;
+    padding: 0.75rem 0.85rem;
+    font-size: 1rem;
+  }
+
+  textarea.form-control {
+    min-height: 8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-brand {
+    display: none;
+  }
+
+  .site-nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 360px) {
+  .px-4,
+  .px-6 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .site-nav-links {
+    gap: 0.3rem;
+    font-size: 0.72rem;
+  }
+
+  .theme-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-basis: 2.5rem;
+  }
+
+  .hero-title,
+  .architecture-title {
+    font-size: 1.9rem;
+  }
+
+  .highlight-box,
+  .framework-card,
+  .principle-card,
+  .domain-box,
+  .project-item,
+  .tech-skill-category,
+  .contact-card,
+  .writing-card,
+  .cv-profile-card {
+    padding: 1rem;
   }
 }
 
