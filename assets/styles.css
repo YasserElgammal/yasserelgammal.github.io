@@ -1574,13 +1574,37 @@ button {
     }
 
     .hero-avatar-frame {
-      width: 13rem;
-      height: 13rem;
-      border-radius: 1.25rem;
+      width: 13.5rem;
+      height: 13.5rem;
+      border-radius: 50%;
       overflow: hidden;
-      border: 2px solid var(--color-border);
-      box-shadow: var(--shadow-surface-hover);
+      border: 3px solid var(--color-surface);
+      box-shadow:
+        0 0 0 2px var(--color-primary),
+        var(--shadow-surface-hover),
+        0 0 28px rgba(56, 189, 248, 0.18);
       background: var(--color-surface);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-avatar-frame:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 0 2px var(--color-primary),
+        var(--shadow-surface-hover),
+        0 0 36px rgba(56, 189, 248, 0.28);
+    }
+
+    .hero-avatar-frame img {
+      display: block;
+      object-position: 46% 18%;
+      transform: scale(1.22);
+      transform-origin: 46% 24%;
+      transition: transform 0.35s ease;
+    }
+
+    .hero-avatar-frame:hover img {
+      transform: scale(1.26);
     }
 
     /* Only on large desktop screens (>= 1024px) do text and photo sit side-by-side */
